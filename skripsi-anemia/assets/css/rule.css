@@ -1,0 +1,115 @@
+/* body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+}
+
+.container_rule{
+    margin: auto;
+    border-radius: 10px;
+    padding: 30px 20px 80px 20px;
+    background-color: white; 
+    margin-top: 100px;
+    width: 40%;
+}
+.container_rule .form-control{
+    width: 100%;
+}
+
+.container_rule label{
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.container_rule h1{
+    font-size: 22px;
+}
+
+.RuleButton{
+    float: right;
+    margin-top: 20px;
+} */
+
+
+body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+}
+
+.container_rule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form{
+    width: 500px;
+    border: 2px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.container_rule label{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.container_rule h1{
+    font-size: 24px;
+}
+
+
+
+.RuleButton{
+    float: right;
+    margin-top: 10px;
+}
+
+#penyakit {
+    border-radius: 5px;
+    margin-left: 24px;
+    padding: 7px 5px 7px 5px;
+    border: 1px solid #ccc;
+    width: 340px;
+}
+#gejala {
+    border-radius: 5px;
+    margin-left: 39px;
+    padding: 7px 5px 7px 5px;
+    border: 1px solid #ccc;
+    width: 340px;
+}
+
+
+@media screen and (max-width: 532px) {
+    form{
+        width: 400px;
+    }
+    #penyakit {
+       width: 340px;
+        margin-left: 0;
+    }
+    #gejala {
+        width: 340px;
+        margin-left: 0;
+    }
+  } 
+
+
+  @media screen and (max-width: 390px) {
+    form{
+        width: 300px;
+    }
+    #penyakit {
+        width: 240px;
+    }
+    #gejala {
+        width: 240px;
+    }
+  } 
+
+
+
+
+

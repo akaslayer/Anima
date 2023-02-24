@@ -1,0 +1,63 @@
+body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+}
+
+.container_rule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+form{
+    width: 500px;
+    border: 2px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.container_rule label{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.container_rule h1{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+.RuleButton{
+    float: right;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 532px) {
+    form{
+        width: 400px;
+    }
+}
+
+
+/* .container_rule .form-control{
+    width: 100%;
+}
+
+.container_rule label{
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.container_rule h1{
+    font-size: 22px;
+}
+
+.RuleButton{
+    float: right;
+    margin-top: 20px;
+} */
+
+
+

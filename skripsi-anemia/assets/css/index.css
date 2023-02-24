@@ -1,0 +1,375 @@
+/* #hero {
+    width: 100%;
+    height: 90vh;
+    background: url("../images/cure.png");
+    background-size: cover;
+    position: relative;
+  }
+  
+  #hero .container {
+    position: relative;
+  }
+  
+  #hero h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: black;
+  }
+  
+  #hero h2 {
+    color: black;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+  }
+  
+  #hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border-radius: 20px;
+    transition: 0.5s;
+    color: #fff;
+    background: #1977cc;
+    text-decoration: none;
+  }
+  
+  #hero .btn-get-started:hover {
+    background: #1277cc;
+  }
+  
+  @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    #hero {
+      margin-bottom: 0;
+      height: 100vh;
+    }
+  
+    #hero .container {
+      padding-bottom: 63px;
+    }
+  
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  
+    #hero h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media (max-height: 500px) {
+    #hero {
+      height: auto;
+    }
+  } */
+
+/*---------------------
+    anemia
+-----------------------*/
+
+/* .doctor__item {
+	padding-bottom: 65px;
+	border-bottom: 1px solid #f2f2f2;
+	margin-bottom: 65px;
+  padding-top: 20px;
+
+}
+#anemia{
+  background: rgb(132,181,180);
+  background: linear-gradient(90deg, rgba(132,181,180,1) 0%, rgba(149,202,201,1) 4%, rgba(242,253,255,1) 68%);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.doctor__item:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.doctor__item__pic {
+	text-align:center;
+}
+
+.doctor__item__pic img {
+	height: 400px;
+	width: 400px;
+	border-radius: 50%;
+	border: 10px solid #ffffff;
+	-webkit-box-shadow: 0px 3px 10px rgba(48, 68, 78, 0.2);
+	box-shadow: 0px 3px 10px rgba(48, 68, 78, 0.2);
+}
+
+.doctor__item__text {
+	padding-top: 55px;
+}
+
+.doctor__item__text.doctor__item__text--left {
+	text-align: right;
+}
+
+.doctor__item__text span {
+	color: #13a2b7;
+	font-size: 15px;
+	font-weight: 500;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 6px;
+}
+
+.doctor__item__text h2 {
+	color: #111111;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.doctor__item__text ul {
+	margin-bottom: 30px;
+}
+
+.doctor__item__text ul li {
+	list-style: none;
+	font-size: 15px;
+	color: #666666;
+	line-height: 36px;
+}
+
+.doctor__item__text ul li i {
+	color: #13a2b7;
+	font-size: 15px;
+	margin-right: 6px;
+} */
+
+
+/* body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+}
+
+.image-cure img{
+  display: flex;
+  width: 600px;
+}
+
+.section{
+  max-width: 80%;
+  margin: 20px auto;
+  margin-bottom: 0;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  height: 80vh;
+
+}
+
+.section .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  margin-top: 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+  color: #fff;
+  background: #1977cc;
+  text-decoration: none;
+}
+
+.section .btn-get-started:hover {
+  background: #3e8ecc;
+}
+
+.section h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  color: black;
+  margin-top: 220px;
+}
+
+
+
+.section h2 {
+  color: black;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+@media screen and (max-width: 992px) {
+  .image-cure img {
+    display: block;
+   
+  }
+ 
+.section h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  
+.section h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .section .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+ 
+    padding: 12px 20px;
+  }
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  place-items: center;
+  background-color: rgba(202, 204, 206, 0.137) !important;
+}
+.row{
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  
+
+  margin: 20px auto;
+  margin-bottom: 0;
+}
+
+.row .right{
+  overflow: hidden;
+}
+
+.row .right img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.row .left{
+  display: flex;
+  align-items: center;
+}
+.row .left .content{
+  padding-left: 120px;
+  padding-bottom: 70px;
+}
+
+
+.row .left h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  color: black;
+}
+
+
+
+.row .left h2 {
+  color: black;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.row .left .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  margin-top: 30px;
+  border-radius: 10px;
+  transition: 0.5s;
+  color: #fff;
+  background: #1977cc;
+  text-decoration: none;
+}
+
+.row .left .btn-get-started:hover {
+  background: #3e8ecc;
+}
+
+
+@media screen and (max-width: 768px) {
+  .row .left .content{
+    padding-left: 0px;
+  }
+ 
+.section h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  
+.section h2 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .section .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+ 
+    padding: 12px 20px;
+  }
+} 
+
+@media screen and (max-width: 992px) {
+  .row .left .content{
+    padding-left: 0px;
+  }
+ 
+.row{
+  width: 90%;
+  grid-template-columns:1fr;
+}
+} 
+
+
+
+  
