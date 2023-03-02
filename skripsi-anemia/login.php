@@ -17,11 +17,14 @@ include './connect.php';
     <?php include 'Navbar.php'; ?>
         <div class="container">
             <form action = "login.php" method="post">
-                <h2>Login Admin</h2>
-                <label>Username</label>
+                <h2 style="margin-bottom:30px;">Login Admin</h2>
+                
+                
                 <input type = "text"  name = "username" placeholder ="Username" required>
-                <label>Password</label>
+                <span class="fa fa-user userspan"></span>
+                
                 <input type = "password"  name ="password" placeholder ="Password" required>
+                <span class="fa fa-lock userspan"></span>
 
                 <input id="button_submit" type = "submit"  name="submit" value ="Login">
             </form>
@@ -48,7 +51,7 @@ include './connect.php';
                 }
             }
             ?>
-  
+  <?php include 'footer.php'; ?>
     </body>
 </html>
 

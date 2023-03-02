@@ -74,6 +74,7 @@
         <img src="assets/images/cure.png"/>
     </div>
 </div>
+<?php include 'footer.php'; ?>
 
 
 </body>

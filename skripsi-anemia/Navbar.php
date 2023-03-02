@@ -24,7 +24,7 @@
 <ul class="nav-list">
   <li><a href="index.php">Home</a></li>
   <li><a href="pengetahuan.php">Pengetahuan</a></li>
-  <li><a href="#">About</a></li>
+  <!-- <li><a href="#">About</a></li> -->
   <li class="button"><a href="login.php">Login</a></li>
 </ul>
 </nav>

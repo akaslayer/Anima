@@ -82,7 +82,7 @@ nav .nav-list li a{
 
 
 nav .nav-list li:not(:last-child) a:hover{
-    color: #13a2b7;;
+    color: #13a2b7;
     transition: .4s;
 }
 
