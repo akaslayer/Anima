@@ -18,13 +18,15 @@ include './connect.php';
         <div class="container">
             <form action = "login.php" method="post">
                 <h2 style="margin-bottom:30px;">Login Admin</h2>
-                
-                
                 <input type = "text"  name = "username" placeholder ="Username" required>
+                <div class="icon">
                 <span class="fa fa-user userspan"></span>
+                </div>
                 
                 <input type = "password"  name ="password" placeholder ="Password" required>
+                <div class="icon">
                 <span class="fa fa-lock userspan"></span>
+                </div>
 
                 <input id="button_submit" type = "submit"  name="submit" value ="Login">
             </form>

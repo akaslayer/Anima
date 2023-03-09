@@ -26,6 +26,7 @@
 
 
 <footer class="footer-distributed">
+<div class="footer-width">
     <div class="footer-left">
         <h3>Anima<span></span></h3>
         <p class ="footer-links">
@@ -56,6 +57,7 @@
             <a href=""><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
+</div>
 </footer>
 </body>
 </html>

@@ -95,8 +95,15 @@ body{
 }
 
 footer{
-    position: fixed;
+    position: flex;
     bottom: 0;
+}
+.footer-width{
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 0px;
+    
 }
 
 @media (max-height:800px){
@@ -118,7 +125,8 @@ footer{
 .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right{
     display: inline-block;
     vertical-align: top;
-    margin-left: 50px;
+    margin-left: 20px;
+
 }
 
 .footer-distributed .footer-left{
@@ -192,13 +200,14 @@ footer{
 }
 
 .footer-distributed .footer-right{
-    width: 28%;
+    width: 32%;
 }
 .footer-distributed .footer-app-about{
     line-height: 20px;
     color: #92999f;
     font-size: 13px;
     font-weight: normal;
+    text-align: justify;
     margin: 17px;
 }
 .footer-distributed .footer-app-about span{
