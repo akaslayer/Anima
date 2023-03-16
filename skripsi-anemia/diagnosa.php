@@ -1,5 +1,9 @@
 <?php
 include "connect.php";
+session_start();
+if(!isset($_SESSION['nama'])){
+  header('location:formKonsultasi.php');
+}
 ?>
 <!doctype html>
 <html lang="en">

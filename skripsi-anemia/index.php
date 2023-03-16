@@ -1,4 +1,11 @@
 
+<?php
+session_start();
+unset($_SESSION['nama']);
+unset($_SESSION['umur']);
+unset($_SESSION['jenis']);
+unset($_SESSION['domisili']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +74,7 @@
     <div class="content">
         <h1>Sistem Pakar</h1>
         <h2>Diagnosis Penyakit Anemia</h2>
-        <a href="diagnosa.php"class="btn-get-started scrollto">Mulai Konsultasi</a>
+        <a href="formKonsultasi.php"class="btn-get-started scrollto">Mulai Konsultasi</a>
     </div>
 </div>
     <div class="right">

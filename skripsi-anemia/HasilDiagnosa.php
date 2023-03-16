@@ -1,9 +1,12 @@
 <?php
 include "connect.php";
+session_start();
 // if(!isset($_POST['submit'])){
 //   header("Location: diagnosa.php");
 //   die();
 // }
+
+
 error_reporting(0);
 if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
@@ -35,7 +38,7 @@ if(isset($_POST['submit'])){
     $arkondisitext[5] = "Tidak";
     
 
-    $sqlpkt = mysqli_query($con, "SELECT * FROM penyakit order by kode_penyakit+0");
+    $sqlpkt = mysqli_query($con, "SELECT * FROM penyakit order by kode_penyakit");
     while ($rpkt = mysqli_fetch_array($sqlpkt)) {
       $arpkt[$rpkt['kode_penyakit']] = $rpkt['nama_penyakit'];
       $ardpkt[$rpkt['kode_penyakit']] = $rpkt['det_penyakit'];
@@ -80,41 +83,47 @@ if(isset($_POST['submit'])){
 
     arsort($arpenyakit);
 
-    $inpgejala = serialize($argejala);
-    $inppenyakit = serialize($arpenyakit);
+    // $inpgejala = serialize($argejala);
+    // $inppenyakit = serialize($arpenyakit);
 
-    $np1 = 0;
-    foreach ($arpenyakit as $key1 => $value1) {
-      $np1++;
-      $idpkt1[$np1] = $key1;
-      $vlpkt1[$np1] = $value1;
+    // $np1 = 0;
+    // foreach ($arpenyakit as $key1 => $value1) {
+    //   $np1++;
+    //   $idpkt1[$np1] = $key1;
+    //   $vlpkt1[$np1] = $value1;
+    // }
+
+    $np = 0;
+    foreach ($arpenyakit as $key => $value) {
+      $np++;
+      $idpkt[$np] = $key;
+      $nmpkt[$np] = $arpkt[$key];
+      $vlpkt[$np] = $value;
     }
 
-    
-    
-      $np = 0;
-      foreach ($arpenyakit as $key => $value) {
-        $np++;
-        $idpkt[$np] = $key;
-        $nmpkt[$np] = $arpkt[$key];
-        $vlpkt[$np] = $value;
-      }
+      $nama = $_SESSION["nama"];
+      $umur = $_SESSION["umur"];
+      $jenis = $_SESSION["jenis"];
+      $domisili = $_SESSION["domisli"];
+
       mysqli_query($con, "INSERT INTO hasil(
+        nama_user,
+        usia,
+        jenis_kelamin,
+        domisili,
         tanggal,
-        gejala,
         penyakit,
-        hasil_id,
         hasil_nilai
       ) 
       VALUES(
+      '$nama',
+      '$umur',
+      '$jenis',
+      '$domisili',
       '$inptanggal',
-      '$inpgejala',
       '$nmpkt[1]',
-      '$idpkt1[1]',
-      '$vlpkt1[1]'
+      '$vlpkt[1]'
       )");
-    
-  
 }
 ?>
 <!doctype html>
@@ -132,6 +141,7 @@ if(isset($_POST['submit'])){
 </head>
 <?php include 'Navbar.php'; ?>
 <body>
+<div class="main-width">
   <div class="container" id="printableArea">
 
   <div class="title-section mt-3 mb-2 ">
@@ -210,7 +220,7 @@ if(isset($_POST['submit'])){
                   <tr>
                   <?php
                         if(empty($idpkt) || empty($arspkt) ){
-                          echo "<td></td>";
+                          echo "";
                         }
                         else{
                             echo "<td>" . $arspkt[$idpkt[1]] . "</td>";
@@ -222,10 +232,17 @@ if(isset($_POST['submit'])){
         </table>
       </div>
     </div>
-    <div class="btn-hasil">
-        <button class="btn btn-success" onclick="printDiv('printableArea')" id="print-btn">Print</button>
-        <a href="index.php"><input class="btn btn-danger retry" type="button" value="Konsultasi Lagi"/></a>
+    <div class="btn-print">
+        <button class="btn btn-sucess print" onclick="printDiv('printableArea')" id="print-btn"><i class="fa-solid fa-print"></i>Print</button>
     </div>
+    <div class="btn-hasil">
+        <a href="diagnosa.php"><input class="btn btn-primary retry" type="button" value="Konsultasi Lagi"/></a>
+        <a href="index.php"><input class="btn btn-danger selesai"  type="button" value="Selesai"/></a>
+    </div>
+    </div>
+  
+    
+    
     <?php include 'footer.php'; ?>
     <script>
       function printDiv(divName) {
@@ -234,6 +251,14 @@ if(isset($_POST['submit'])){
       document.body.innerHTML = printContents;
       window.print();
       document.body.innerHTML = originalContents;
+      var nav = document.querySelector("#navbar")
+      window.addEventListener("scroll", ()=>{
+    if(document.documentElement.scrollTop > 20){
+      nav.classList.add("sticky");
+    }else{
+      nav.classList.remove("sticky");
+    }
+  });
     }
     </script>
 </body>

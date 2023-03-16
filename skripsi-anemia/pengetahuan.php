@@ -1,3 +1,11 @@
+
+<?php
+session_start();
+unset($_SESSION['nama']);
+unset($_SESSION['umur']);
+unset($_SESSION['jenis']);
+unset($_SESSION['domisili']);
+?>
 <!doctype html>
 <html lang="en">
     <head>
