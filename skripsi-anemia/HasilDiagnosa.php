@@ -4,6 +4,7 @@ include "connect.php";
 //   header("Location: diagnosa.php");
 //   die();
 // }
+error_reporting(0);
 if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
     $inptanggal = date('Y-m-d H:i:s');
@@ -151,7 +152,7 @@ if(isset($_POST['submit'])){
     <?php
     $ig = 0;
     if(empty($argejala)){
-      echo '<tr><td colspan="3" >Kamu Belum Memilih Gejala</td></tr>';
+      echo '<tr></tr>';
     }
     else{
     foreach ($argejala as $key => $value) {
