@@ -1,0 +1,49 @@
+body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+}
+
+
+.title-section{
+    text-align: center;
+}
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+.saranPenyakit th{
+    font-size: 20px;
+}
+
+.jenisPenyakit td h5{
+    font-size: 18px;
+}
+
+.jenisPenyakit th{
+    font-size: 20px;
+}
+
+.pilihanGejala td{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+table{
+    border: 2px solid black;
+}
+
+.btn-hasil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retry{
+    margin-left: 10px;
+}
+
+@page{
+    size: A4;
+}

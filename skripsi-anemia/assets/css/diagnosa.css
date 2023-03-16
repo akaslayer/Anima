@@ -1,0 +1,52 @@
+body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+  
+}
+
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+
+.btn-kondisi{
+    position: sticky;
+    bottom: 60px;
+    left: 20px;
+    border-radius: 50px;
+    margin-left: 50px;
+    float: right;
+    height:60px;
+    width: 60px;
+    margin-right: 130px;
+    background-color: black;
+}
+.btn-kondisi i{
+ font-size: 20px;
+ color: white;
+}
+.title-section{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.container select{
+  padding-right: 20px;
+  background-color: rgba(202, 204, 206, 0.04) ;
+  border-radius: 3px;
+  border: none;
+}
+
+@media(max-width:880px){
+    .btn-kondisi{
+        margin-right: 10px;
+    }
+   
+}

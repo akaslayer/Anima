@@ -52,9 +52,9 @@
             <strong>Anima</strong> is an expert system website that can detect anemia diseases that can help you prevent and treat for early treatment
         </p>
         <div class="footer-icons">
-            <a href=""><i class="fa-brands fa-github"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin"></i></a>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/akaslayer"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hendrytsp"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/hendrytjahajasp"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </div>
 </div>

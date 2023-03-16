@@ -67,7 +67,7 @@
     <div class="content">
         <h1>Sistem Pakar</h1>
         <h2>Diagnosis Penyakit Anemia</h2>
-        <a href=""class="btn-get-started scrollto">Mulai Konsultasi</a>
+        <a href="diagnosa.php"class="btn-get-started scrollto">Mulai Konsultasi</a>
     </div>
 </div>
     <div class="right">

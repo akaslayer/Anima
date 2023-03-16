@@ -262,6 +262,9 @@ footer{
     .footer-distributed .footer-icons{
         margin-left: 0px;
     }
+    .footer-distributed .footer-right .footer-app-about{
+        text-align: center;
+    }
 }
 
 
