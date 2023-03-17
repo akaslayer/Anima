@@ -5,12 +5,12 @@ if (isset($_SESSION['cari'])) {
   unset($_SESSION['cari']);
 }
 $id=$_GET['ruleid'];
-$sql="Select * from basis_pengetahuan bp, penyakit p, gejala g where bp.kode_pengetahuan=$id AND bp.kode_penyakit=p.kode_penyakit AND bp.kode_gejala = g.kode_gejala";
+$sql="Select * from tbl_rule rl, tbl_penyakit p, tbl_gejala g where rl.id_rule=$id AND rl.id_penyakit=p.id_penyakit AND rl.id_gejala = g.id_gejala";
 $result = mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 
-$kode_penyakit =$row['kode_penyakit'];
-$kode_gejala =$row['kode_gejala'];
+$kode_penyakit =$row['id_penyakit'];
+$kode_gejala =$row['id_gejala'];
 $penyakit=$row['nama_penyakit'];
 $gejala=$row['nama_gejala'];
 $mb=$row['mb'];
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
   $gejala=$_POST['gejala'];
   $mb=$_POST['mb'];
   $md=$_POST['md'];
-  $sql="update basis_pengetahuan set kode_pengetahuan='$id',kode_penyakit='$penyakit',kode_gejala='$gejala',mb='$mb',md='$md' where kode_pengetahuan=$id";
+  $sql="update tbl_rule set id_rule='$id',id_penyakit='$penyakit',id_gejala='$gejala',mb='$mb',md='$md' where id_rule=$id";
   $result=mysqli_query($con,$sql);
   if($result){
     header('location:DisplayRule.php');
@@ -49,9 +49,9 @@ if(isset($_POST['submit'])){
     <select name="penyakit" id="penyakit" required>
         <option value="<?php echo $kode_penyakit;?>"><?php echo $penyakit;?></option>
         <?php
-            $sql_penyakit = mysqli_query($con, "Select * from penyakit") or die(mysqli_error($con));
+            $sql_penyakit = mysqli_query($con, "Select * from tbl_penyakit") or die(mysqli_error($con));
             while($data_penyakit = mysqli_fetch_array($sql_penyakit)){
-                echo '<option value="'.$data_penyakit['kode_penyakit'].'">'.$data_penyakit['nama_penyakit'].'</option>';
+                echo '<option value="'.$data_penyakit['id_penyakit'].'">'.$data_penyakit['nama_penyakit'].'</option>';
             }
         ?>  
     </select>
@@ -61,9 +61,9 @@ if(isset($_POST['submit'])){
     <select name="gejala" id="gejala" required>
         <option value="<?php echo $kode_gejala;?>"><?php echo $gejala;?></option>
         <?php
-            $sql_gejala = mysqli_query($con, "Select * from gejala") or die(mysqli_error($con));
+            $sql_gejala = mysqli_query($con, "Select * from tbl_gejala") or die(mysqli_error($con));
             while($data_gejala = mysqli_fetch_array($sql_gejala)){
-                echo '<option value="'.$data_gejala['kode_gejala'].'">'.$data_gejala['nama_gejala'].'</option>';
+                echo '<option value="'.$data_gejala['id_gejala'].'">'.$data_gejala['nama_gejala'].'</option>';
             }
         ?>  
     </select>

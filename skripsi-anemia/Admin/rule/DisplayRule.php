@@ -50,7 +50,7 @@ if(isset($_POST['tombolcari'])){
   <tbody>
 
     <?php
-    $ambildata = mysqli_query($con,"Select * from basis_pengetahuan bp, penyakit p, gejala g where bp.kode_penyakit=p.kode_penyakit AND bp.kode_gejala=g.kode_gejala AND p.nama_penyakit LIKE '%$cari%'");
+    $ambildata = mysqli_query($con,"Select * from tbl_rule rl, tbl_penyakit p, tbl_gejala g where rl.id_penyakit=p.id_penyakit AND rl.id_gejala=g.id_gejala AND p.nama_penyakit LIKE '%$cari%'");
     $jumlahData = 10;
     $totalData = mysqli_num_rows($ambildata);
     $jumlahPagination = ceil($totalData / $jumlahData);
@@ -74,12 +74,12 @@ if(isset($_POST['tombolcari'])){
     }else{
         $end_number = $jumlahPagination;
     }
-    $ambildata_perhalaman = mysqli_query($con,"Select * from basis_pengetahuan bp, penyakit p, gejala g where bp.kode_penyakit=p.kode_penyakit AND bp.kode_gejala=g.kode_gejala AND p.nama_penyakit LIKE '%$cari%' LIMIT $dataAwal, $jumlahData");
+    $ambildata_perhalaman = mysqli_query($con,"Select * from tbl_rule rl, tbl_penyakit p, tbl_gejala g where rl.id_penyakit=p.id_penyakit AND rl.id_gejala=g.id_gejala AND p.nama_penyakit LIKE '%$cari%' LIMIT $dataAwal, $jumlahData");
     $nomor = 0 + $dataAwal;
     if($ambildata_perhalaman){
         while($row=mysqli_fetch_assoc($ambildata_perhalaman)){
             $nomor++;
-            $id=$row['kode_pengetahuan'];
+            $id=$row['id_rule'];
             $penyakit=$row['nama_penyakit'];
             $gejala =$row['nama_gejala'];
             $MB =$row['mb'];

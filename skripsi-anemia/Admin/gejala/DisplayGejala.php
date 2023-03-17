@@ -48,7 +48,7 @@ if(isset($_POST['tombolcarigejala'])){
   <tbody>
 
     <?php
-    $ambildata = mysqli_query($con,"Select * from gejala where nama_gejala LIKE '%$carigejala%'");
+    $ambildata = mysqli_query($con,"Select * from tbl_gejala where nama_gejala LIKE '%$carigejala%'");
     $jumlahData = 10;
     $totalData = mysqli_num_rows($ambildata);
     $jumlahPagination = ceil($totalData / $jumlahData);
@@ -72,12 +72,12 @@ if(isset($_POST['tombolcarigejala'])){
     }else{
         $end_number = $jumlahPagination;
     }
-    $ambildata_perhalaman = mysqli_query($con,"Select * from gejala where nama_gejala LIKE '%$carigejala%' LIMIT $dataAwal, $jumlahData");
+    $ambildata_perhalaman = mysqli_query($con,"Select * from tbl_gejala where nama_gejala LIKE '%$carigejala%' LIMIT $dataAwal, $jumlahData");
     $nomor = 0 + $dataAwal;
     if($ambildata_perhalaman){
         while($row=mysqli_fetch_assoc($ambildata_perhalaman)){
           $nomor++;
-            $id=$row['kode_gejala'];
+            $id=$row['id_gejala'];
             $name=$row['nama_gejala'];
             echo '<tr>
                     <th scope="row">'.$nomor.'</th>

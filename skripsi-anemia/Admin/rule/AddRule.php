@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
   $gejala=$_POST['gejala'];
   $mb=$_POST['mb'];
   $md=$_POST['md'];
-  $sql="insert into basis_pengetahuan(kode_penyakit,kode_gejala,mb,md) values('$penyakit','$gejala','$mb','$md')";
+  $sql="insert into tbl_rule(id_penyakit,id_gejala,mb,md) values('$penyakit','$gejala','$mb','$md')";
   $result=mysqli_query($con,$sql);
   if($result){
     // echo "Gejala Inserted Successfully";
@@ -37,9 +37,9 @@ if(isset($_POST['submit'])){
     <select  name="penyakit" id="penyakit" required>
         <option value="">--Pilih Penyakit--</option>
         <?php
-            $sql_penyakit = mysqli_query($con, "Select * from penyakit") or die(mysqli_error($con));
+            $sql_penyakit = mysqli_query($con, "Select * from tbl_penyakit") or die(mysqli_error($con));
             while($data_penyakit = mysqli_fetch_array($sql_penyakit)){
-                echo '<option value="'.$data_penyakit['kode_penyakit'].'">'.$data_penyakit['nama_penyakit'].'</option>';
+                echo '<option value="'.$data_penyakit['id_penyakit'].'">'.$data_penyakit['nama_penyakit'].'</option>';
             }
         ?>  
     </select>
@@ -49,9 +49,9 @@ if(isset($_POST['submit'])){
     <select  name="gejala" id="gejala" required>
         <option value="">--Pilih Gejala--</option>
         <?php
-            $sql_gejala = mysqli_query($con, "Select * from gejala") or die(mysqli_error($con));
+            $sql_gejala = mysqli_query($con, "Select * from tbl_gejala") or die(mysqli_error($con));
             while($data_gejala = mysqli_fetch_array($sql_gejala)){
-                echo '<option value="'.$data_gejala['kode_gejala'].'">'.$data_gejala['nama_gejala'].'</option>';
+                echo '<option value="'.$data_gejala['id_gejala'].'">'.$data_gejala['nama_gejala'].'</option>';
             }
         ?>  
     </select>

@@ -5,7 +5,7 @@ if (isset($_SESSION['carigejala'])) {
   unset($_SESSION['carigejala']);
 }
 $id=$_GET['gejalaid'];
-$sql="Select * from gejala where kode_gejala=$id";
+$sql="Select * from tbl_gejala where id_gejala=$id";
 $result = mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 $gejala=$row['nama_gejala'];
@@ -13,7 +13,7 @@ $gejala=$row['nama_gejala'];
 
 if(isset($_POST['submit'])){
   $gejala=$_POST['gejala'];
-  $sql="update gejala set kode_gejala='$id',nama_gejala='$gejala' where kode_gejala=$id";
+  $sql="update tbl_gejala set id_gejala='$id',nama_gejala='$gejala' where id_gejala=$id";
   $result=mysqli_query($con,$sql);
   if($result){
     header('location:DisplayGejala.php');
