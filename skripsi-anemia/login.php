@@ -41,7 +41,7 @@ unset($_SESSION['domisili']);
                 $password = $_POST['password'];
                 $password = md5($password);
 
-                $select = mysqli_query($con, "select * from admin where username ='$username' AND password = '$password'");
+                $select = mysqli_query($con, "select * from tbl_admin where username ='$username' AND password = '$password'");
                 $row = mysqli_fetch_array($select);
                 if(is_array($row)){
                     $_SESSION["username"] = $row['username'];

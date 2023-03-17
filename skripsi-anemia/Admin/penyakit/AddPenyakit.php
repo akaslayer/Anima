@@ -7,7 +7,7 @@ if (isset($_SESSION['caripenyakit'])) {
 if(isset($_POST['submit'])){
   $penyakit=$_POST['penyakit'];
   $saran=$_POST['saran'];
-  $sql="insert into penyakit(nama_penyakit,srn_penyakit) values('$penyakit','$saran')";
+  $sql="insert into tbl_penyakit(nama_penyakit,srn_penyakit) values('$penyakit','$saran')";
   $result=mysqli_query($con,$sql);
   if($result){
     // echo "Gejala Inserted Successfully";

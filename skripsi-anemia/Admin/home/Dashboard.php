@@ -27,7 +27,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">
                     <?php
-                        $dash_gejala_query = "select * from gejala";
+                        $dash_gejala_query = "select * from tbl_gejala";
                         $dash_gejala_query_run = mysqli_query($con,$dash_gejala_query);
                         if($gejala_total = mysqli_num_rows($dash_gejala_query_run)){
                             echo '<h3 class="mb-2"> '. $gejala_total .' </h3>';
@@ -47,7 +47,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
             <div class="card bg-success text-white mb-4">
                 <div class="card-body">
                 <?php
-                        $dash_penyakit_query = "select * from penyakit";
+                        $dash_penyakit_query = "select * from tbl_penyakit";
                         $dash_penyakit_query_run = mysqli_query($con,$dash_penyakit_query);
                         if($penyakit_total = mysqli_num_rows($dash_penyakit_query_run)){
                             echo '<h3 class="mb-2"> '. $penyakit_total .' </h3>';
@@ -66,7 +66,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body">
                 <?php
-                        $dash_rule_query = "select * from basis_pengetahuan";
+                        $dash_rule_query = "select * from tbl_rule";
                         $dash_rule_query_run = mysqli_query($con,$dash_rule_query);
                         if($rule_total = mysqli_num_rows($dash_rule_query_run)){
                             echo '<h3 class="mb-2"> '. $rule_total .' </h3>';

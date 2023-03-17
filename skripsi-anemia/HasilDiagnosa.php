@@ -10,7 +10,7 @@ session_start();
 error_reporting(0);
 if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
-    $inptanggal = date('Y-m-d H:i:s');
+    $inptanggal = date('Y-m-d');
     $arbobot = array('0', '1', '0.8', '0.6', '0.4', '0');
     $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
     $argejala = array();
@@ -147,6 +147,37 @@ if(isset($_POST['submit'])){
   <div class="title-section mt-3 mb-2 ">
       <h2>Hasil Diagnosa</h2>
   </div>
+  <div class="dataPasien mt-3 mb-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="3" >Data Pasien</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td width="15%">Nama Pasien</td>
+          <td width="3%" >:</td>
+          <td><?php echo $nama ?></td>  
+        </tr>
+        <tr>
+          <td width="20%">Umur</td>
+          <td width="3%" >:</td>
+          <td><?php echo $umur ?></td>
+        </tr>
+        <tr>
+          <td width="15%">Jenis Kelamin</td>
+          <td width="3%">:</td>
+          <td><?php echo $jenis ?></td>
+        </tr>
+        <tr>
+          <td width="15%">Domisili</td>
+          <td width="3%" >:</td>
+          <td><?php echo $domisili ?></td>
+        </tr>
+</tbody>
+</table>
+  </div>
 
     <div class="pilihanGejala mt-3 mb-4">
     <table class='table table-bordered '>
@@ -253,12 +284,12 @@ if(isset($_POST['submit'])){
       document.body.innerHTML = originalContents;
       var nav = document.querySelector("#navbar")
       window.addEventListener("scroll", ()=>{
-    if(document.documentElement.scrollTop > 20){
-      nav.classList.add("sticky");
-    }else{
-      nav.classList.remove("sticky");
-    }
-  });
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else{
+        nav.classList.remove("sticky");
+        }
+      });
     }
     </script>
 </body>

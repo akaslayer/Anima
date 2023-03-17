@@ -50,7 +50,7 @@ if(isset($_POST['tombolcari'])){
   <tbody>
 
     <?php
-    $ambildata = mysqli_query($con,"Select * from penyakit where nama_penyakit LIKE '%$caripenyakit%'");
+    $ambildata = mysqli_query($con,"Select * from tbl_penyakit where nama_penyakit LIKE '%$caripenyakit%'");
     $jumlahData = 10;
     $totalData = mysqli_num_rows($ambildata);
     $jumlahPagination = ceil($totalData / $jumlahData);
@@ -74,12 +74,12 @@ if(isset($_POST['tombolcari'])){
     }else{
         $end_number = $jumlahPagination;
     }
-    $ambildata_perhalaman = mysqli_query($con,"Select * from penyakit where nama_penyakit LIKE '%$caripenyakit%'");
+    $ambildata_perhalaman = mysqli_query($con,"Select * from tbl_penyakit where nama_penyakit LIKE '%$caripenyakit%'");
     $nomor = 0 + $dataAwal;
     if($ambildata_perhalaman){
         while($row=mysqli_fetch_assoc($ambildata_perhalaman)){
             $nomor++;
-            $id=$row['kode_penyakit'];
+            $id=$row['id_penyakit'];
             $penyakit=$row['nama_penyakit'];
             $saran =$row['srn_penyakit'];
             echo '<tr>

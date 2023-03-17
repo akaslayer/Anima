@@ -39,7 +39,7 @@ if(!isset($_SESSION['username'])){
                         <a href="./../penyakit/DisplayPenyakit.php" class="nav_link <?= $page == 'DisplayPenyakit.php' || $page == 'AddPenyakit.php' || $page == 'UpdatePenyakit.php' ? 'active':'' ?>"> <i class='bx bx-injection nav_icon'></i> <span class="nav_name">Penyakit</span> </a> 
                         <a class="nav_link <?= $page == 'DisplayGejala.php' || $page == 'AddGejala.php' || $page == 'UpdateGejala.php' ? 'active':'' ?>" href="./../gejala/DisplayGejala.php"> <i class='bx bx-plus-medical nav_icon'></i> <span class="nav_name">Gejala</span> </a> 
                         <a class="nav_link <?= $page == 'DisplayRule.php' || $page == 'AddRule.php' || $page == 'UpdateRule.php' ? 'active':'' ?>" href="./../rule/DisplayRule.php"> <i class='bx bx-brain nav_icon'></i> <span class="nav_name">Rule</span> </a> 
-                        <a href="#" class="nav_link"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">History</span> </a>  
+                        <a class="nav_link <?= $page == 'DisplayHistory.php' ? 'active':'' ?>" href="./../history/DisplayHistory.php"> <i class='bx bx-history nav_icon'></i> <span class="nav_name">History</span> </a>  
                 </div>
             </div> 
            

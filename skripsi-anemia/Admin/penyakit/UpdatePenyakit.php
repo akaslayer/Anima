@@ -6,7 +6,7 @@ if (isset($_SESSION['caripenyakit'])) {
 }
 
 $id=$_GET['penyakitid'];
-$sql="Select * from penyakit where kode_penyakit=$id";
+$sql="Select * from tbl_penyakit where id_penyakit=$id";
 $result = mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 $penyakit = $row['nama_penyakit'];
@@ -15,7 +15,7 @@ $saran = $row['srn_penyakit'];
 if(isset($_POST['submit'])){
   $penyakit=$_POST['penyakit'];
   $saran=$_POST['saran'];
-  $sql="update penyakit set kode_penyakit='$id', nama_penyakit='$penyakit',srn_penyakit='$saran' where kode_penyakit=$id";
+  $sql="update tbl_penyakit set id_penyakit='$id', nama_penyakit='$penyakit',srn_penyakit='$saran' where id_penyakit=$id";
   $result=mysqli_query($con,$sql);
   if($result){
     header('location:DisplayPenyakit.php');
