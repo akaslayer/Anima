@@ -38,22 +38,21 @@ if(isset($_POST['submit'])){
     $arkondisitext[5] = "Tidak";
     
 
-    $sqlpkt = mysqli_query($con, "SELECT * FROM penyakit order by kode_penyakit");
+    $sqlpkt = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
     while ($rpkt = mysqli_fetch_array($sqlpkt)) {
-      $arpkt[$rpkt['kode_penyakit']] = $rpkt['nama_penyakit'];
-      $ardpkt[$rpkt['kode_penyakit']] = $rpkt['det_penyakit'];
-      $arspkt[$rpkt['kode_penyakit']] = $rpkt['srn_penyakit'];
+      $arpkt[$rpkt['id_penyakit']] = $rpkt['nama_penyakit'];
+      $arspkt[$rpkt['id_penyakit']] = $rpkt['srn_penyakit'];
     }
 
     //print_r($arkondisitext);
 // -------- perhitungan certainty factor (CF) ---------
 // --------------------- START ------------------------
-    $sqlpenyakit = mysqli_query($con, "SELECT * FROM penyakit order by kode_penyakit");
+    $sqlpenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
     $arpenyakit = array();
     while ($rpenyakit = mysqli_fetch_array($sqlpenyakit)) {
       $cftotal_temp = 0;
       $cf = 0;
-      $sqlgejala = mysqli_query($con, "SELECT * FROM basis_pengetahuan where kode_penyakit=$rpenyakit[kode_penyakit]");
+      $sqlgejala = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
       $cflama = 0;
       while ($rgejala = mysqli_fetch_array($sqlgejala)) {
         $arkondisi = explode("_", $_POST['kondisi'][0]);
@@ -62,7 +61,7 @@ if(isset($_POST['submit'])){
         for ($i = 0; $i < count($_POST['kondisi']); $i++) {
           $arkondisi = explode("_", $_POST['kondisi'][$i]);
           $gejala = $arkondisi[0];
-          if ($rgejala['kode_gejala'] == $gejala) {
+          if ($rgejala['id_gejala'] == $gejala) {
             $cf = ($rgejala['mb'] - $rgejala['md']) * $arbobot[$arkondisi[1]];
             if (($cf >= 0) && ($cf * $cflama >= 0)) {
               $cflama = $cflama + ($cf * (1 - $cflama));
@@ -77,7 +76,7 @@ if(isset($_POST['submit'])){
         }
       }
       if ($cflama > 0) {
-        $arpenyakit += array($rpenyakit['kode_penyakit'] => number_format($cflama, 4));
+        $arpenyakit += array($rpenyakit['id_penyakit'] => number_format($cflama, 4));
       }
     }
 
@@ -106,14 +105,14 @@ if(isset($_POST['submit'])){
       $jenis = $_SESSION["jenis"];
       $domisili = $_SESSION["domisli"];
 
-      mysqli_query($con, "INSERT INTO hasil(
+      mysqli_query($con, "INSERT INTO tbl_history(
         nama_user,
-        usia,
+        umur,
         jenis_kelamin,
         domisili,
-        tanggal,
-        penyakit,
-        hasil_nilai
+        tanggal_diagnosa,
+        hasil_diagnosa,
+        nilai_cf
       ) 
       VALUES(
       '$nama',
@@ -200,7 +199,7 @@ if(isset($_POST['submit'])){
       $kondisi = $value;
       $ig++;
       $gejala = $key;
-      $sql4 = mysqli_query($con, "SELECT * FROM gejala where kode_gejala = '$key'");
+      $sql4 = mysqli_query($con, "SELECT * FROM tbl_gejala where id_gejala = '$key'");
       $r4 = mysqli_fetch_array($sql4);
       echo '<tr><td>' . $ig . '</td>';
       echo '<td>' . $r4['nama_gejala'] . '</td>';

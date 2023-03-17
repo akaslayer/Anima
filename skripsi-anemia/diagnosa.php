@@ -35,7 +35,7 @@ if(!isset($_SESSION['nama'])){
   </thead>
   <tbody class="pilihkondisi">
   <?php
-  $sql = mysqli_query($con, "Select * from gejala order by kode_gejala");
+  $sql = mysqli_query($con, "Select * from tbl_gejala order by id_gejala");
   $i = 0;
   while($r = mysqli_fetch_array($sql)){
     $i++;
@@ -43,11 +43,11 @@ if(!isset($_SESSION['nama'])){
     echo "<td class=gejala>$r[nama_gejala]</td>";
     echo '<td class="opsi"><select name="kondisi[]" id="sl' . $i . '" class="opsikondisi"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';
     ?>
-      <option id="1" style="color:black" value="<?php echo $r['kode_gejala'] . '_' . 1; ?>">Pasti</option>
-      <option id="2" style="color:black" value="<?php echo $r['kode_gejala'] . '_' . 2; ?>">Hampir Pasti</option>
-      <option id="3" style="color:black" value="<?php echo $r['kode_gejala'] . '_' . 3; ?>">Kemungkinan Besar</option>
-      <option id="4" style="color:black" value="<?php echo $r['kode_gejala'] . '_' . 4; ?>">Mungkin</option>
-      <option id="5" style="color:black" value="<?php echo $r['kode_gejala'] . '_' . 5; ?>">Tidak</option>
+      <option id="1" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 1; ?>">Pasti</option>
+      <option id="2" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 2; ?>">Hampir Pasti</option>
+      <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Kemungkinan Besar</option>
+      <option id="4" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 4; ?>">Mungkin</option>
+      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 5; ?>">Tidak</option>
       <?php
       echo '</select></td>';
       ?>

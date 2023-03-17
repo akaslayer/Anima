@@ -14,11 +14,11 @@ $fileName = "history-data_" . date('Y-m-d') . ".xls";
 
 $fields = array ('No', 'Tanggal', 'Nama', 'Gender', 'Umur', 'Domisili', 'Hasil' ,'CF');
 $excelData = implode("\t", array_values($fields)) . "\n"; 
-$query = $con->query("Select * from hasil order by id_hasil asc");
+$query = $con->query("Select * from tbl_history order by id_history asc");
 $no = 1;
 if($query->num_rows > 0){
     while($row = $query->fetch_assoc()){
-        $lineData = array($no,$row['tanggal'],$row['nama_user'],$row['jenis_kelamin'],$row['usia'],$row['domisili'],$row['penyakit'],$row['hasil_nilai']);
+        $lineData = array($no,$row['tanggal_diagnosa'],$row['nama_user'],$row['jenis_kelamin'],$row['umur'],$row['domisili'],$row['hasil_diagnosa'],$row['nilai_cf']);
         array_walk($lineData, 'filterData'); 
         $excelData .= implode("\t", array_values($lineData)) . "\n"; 
         $no++;
