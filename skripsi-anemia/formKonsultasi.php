@@ -11,6 +11,7 @@ session_start();
         <title>Bootstrap demo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link href="assets/css/formKonsultasi.css" rel="stylesheet">
         
     </head>
     <body>
@@ -20,11 +21,11 @@ session_start();
                 <h2 style="margin-bottom:30px;">Form Konsultasi</h2>
                 <div class="mb-2 mt-4">
                     <label>Nama Pasien</label>
-                    <input type = "text"  name = "nama" placeholder ="Nama" required>
+                    <input type = "text"  name = "nama"  required>
                 </div>
                 <div class="mb-2 mt-4">
-                <label>Umur Pasien</label>
-                    <input type = "number"  name ="umur" placeholder ="Umur" required>
+                <label>Usia Pasien</label>
+                    <input type = "number"  name ="umur"  required>
                 </div>
                 <div class="mb-2 mt-4">
                 <label>Jenis Kelamin</label>
@@ -35,7 +36,7 @@ session_start();
                 </div>
                 <div class="mb-2 mt-4">
                 <label>Domisili</label>
-                <input type = "text"  name = "domisili" placeholder ="Domisili" required>
+                <input type = "text"  name = "domisili"  required>
                 </div>
                 <input  type = "submit"  name="submit" value ="Submit">
             </form>

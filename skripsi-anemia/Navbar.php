@@ -30,7 +30,6 @@
 </header>
 </div>
 </section>
-<script type="text/javascript" src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   var nav = document.querySelector("#navbar")
@@ -39,6 +38,17 @@
       nav.classList.add("sticky");
     }else{
       nav.classList.remove("sticky");
+    }
+  });
+  var hamburger = document.querySelector(".hamb");
+  var navlist = document.querySelector(".nav-list");
+  hamburger.addEventListener("click",function(){
+    if(this.classList.contains("click")){
+      this.classList.remove("click");
+      navlist.classList.remove("open");
+    }else{
+    this.classList.add("click");
+    navlist.classList.add("open");
     }
   });
 </script>

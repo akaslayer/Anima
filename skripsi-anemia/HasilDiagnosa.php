@@ -138,8 +138,8 @@ if(isset($_POST['submit'])){
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <link href="assets/css/HasilDiagnosa.css" rel="stylesheet">
 </head>
-<?php include 'Navbar.php'; ?>
 <body>
+<?php include 'Navbar.php'; ?>
 <div class="main-width">
   <div class="container" id="printableArea">
 
@@ -275,19 +275,31 @@ if(isset($_POST['submit'])){
     
     <?php include 'footer.php'; ?>
     <script>
-      function printDiv(divName) {
-      var printContents = document.getElementById(divName).innerHTML;
-      var originalContents = document.body.innerHTML;
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
-      var nav = document.querySelector("#navbar")
-      window.addEventListener("scroll", ()=>{
-      if(document.documentElement.scrollTop > 20){
-        nav.classList.add("sticky");
-      }else{
-        nav.classList.remove("sticky");
+      function printDiv(divName) 
+      {
+        var printContents = document.getElementById(divName).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+        var nav = document.querySelector("#navbar")
+        window.addEventListener("scroll", ()=>{
+        if(document.documentElement.scrollTop > 20){
+          nav.classList.add("sticky");
+        }else{
+          nav.classList.remove("sticky");
         }
+        });
+        var hamburger = document.querySelector(".hamb");
+        var navlist = document.querySelector(".nav-list");
+        hamburger.addEventListener("click",function(){
+        if(this.classList.contains("click")){
+            this.classList.remove("click");
+            navlist.classList.remove("open");
+        }else{
+            this.classList.add("click");
+            navlist.classList.add("open");
+          }
       });
     }
     </script>
