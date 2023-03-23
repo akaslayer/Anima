@@ -13,6 +13,16 @@ body{
     overflow-x: hidden;
 }
 
+.activate{
+    color: #13a2b7 !important;
+}
+
+.activate_btn{
+    color: white !important;
+    background-color: #13a2b7 !important;
+
+}
+
 .main-width{
     width: 1280px;
     max-width: 95%;

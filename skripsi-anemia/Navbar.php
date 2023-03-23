@@ -8,6 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+<?php  $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); ?>
 <section id="navbar">
 <div class="main-width">
   <header>
@@ -21,10 +22,10 @@
     <span></span>
 </div>
 <ul class="nav-list">
-  <li><a href="index.php">Home</a></li>
-  <li><a href="pengetahuan.php">Pengetahuan</a></li>
+  <li><a href="index.php" class="<?= $page == 'index.php' ? 'activate':'' ?>">Home</a></li>
+  <li><a href="pengetahuan.php" class="<?= $page == 'pengetahuan.php' ? 'activate':'' ?>">Pengetahuan</a></li>
   <!-- <li><a href="#">About</a></li> -->
-  <li class="button"><a href="login.php">Login</a></li>
+  <li class="button"><a href="login.php" class="<?= $page == 'login.php' ? 'activate_btn':'' ?>">Login</a></li>
 </ul>
 </nav>
 </header>

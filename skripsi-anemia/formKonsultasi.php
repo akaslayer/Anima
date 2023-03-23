@@ -38,7 +38,7 @@ session_start();
                 <label>Domisili</label>
                 <input type = "text"  name = "domisili"  required>
                 </div>
-                <input  type = "submit"  name="submit" value ="Submit">
+                <input  id="btn_submit"type ="submit"  name="submit" value ="SUBMIT">
             </form>
         </div>
         <?php
