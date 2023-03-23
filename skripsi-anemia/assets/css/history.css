@@ -80,6 +80,12 @@ body{
     margin-bottom: 30px;
 }
 
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
 .container{ 
     margin-top: 100px;
     border-radius: 20px;

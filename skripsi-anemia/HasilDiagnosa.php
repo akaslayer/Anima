@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
     $inptanggal = date('Y-m-d');
     $arbobot = array('0', '1', '0.8', '0.6', '0.4', '0');
-    $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
+    // $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
     $argejala = array();
 
     for ($i = 0; $i < count($_POST['kondisi']); $i++) {
@@ -104,6 +104,11 @@ if(isset($_POST['submit'])){
       $umur = $_SESSION["umur"];
       $jenis = $_SESSION["jenis"];
       $domisili = $_SESSION["domisli"];
+      $_SESSION["nama_penyakit"] = $nmpkt[1];
+      $_SESSION["nilai_cf"] = $vlpkt[1];
+      $_SESSION["srn_penyakit"] = $arspkt[$idpkt[1]];
+      $_SESSION["gejala"] = $argejala;
+      $_SESSION["pilihan_kondisi"] = $arkondisitext;
 
       mysqli_query($con, "INSERT INTO tbl_history(
         nama_user,
@@ -157,22 +162,22 @@ if(isset($_POST['submit'])){
         <tr>
         <td width="15%">Nama Pasien</td>
           <td width="3%" >:</td>
-          <td><?php echo $nama ?></td>  
+          <td><?php echo  $_SESSION["nama"]; ?></td>  
         </tr>
         <tr>
           <td width="20%">Umur</td>
           <td width="3%" >:</td>
-          <td><?php echo $umur ?></td>
+          <td><?php echo $_SESSION["umur"] ?></td>
         </tr>
         <tr>
           <td width="15%">Jenis Kelamin</td>
           <td width="3%">:</td>
-          <td><?php echo $jenis ?></td>
+          <td><?php echo $_SESSION["jenis"] ?></td>
         </tr>
         <tr>
           <td width="15%">Domisili</td>
           <td width="3%" >:</td>
-          <td><?php echo $domisili ?></td>
+          <td><?php echo $_SESSION["domisli"] ?></td>
         </tr>
 </tbody>
 </table>
@@ -191,11 +196,11 @@ if(isset($_POST['submit'])){
     
     <?php
     $ig = 0;
-    if(empty($argejala)){
+    if(empty($_SESSION["gejala"] )){
       echo '<tr></tr>';
     }
     else{
-    foreach ($argejala as $key => $value) {
+    foreach ($_SESSION["gejala"] as $key => $value) {
       $kondisi = $value;
       $ig++;
       $gejala = $key;
@@ -203,7 +208,8 @@ if(isset($_POST['submit'])){
       $r4 = mysqli_fetch_array($sql4);
       echo '<tr><td>' . $ig . '</td>';
       echo '<td>' . $r4['nama_gejala'] . '</td>';
-      echo '<td><span style="color:' . $arcolor[$kondisi] . '">' . $arkondisitext[$kondisi] . '</span></td></tr>';
+      // echo '<td><span style="color:' . $arcolor[$kondisi] . '">' . $arkondisitext[$kondisi] . '</span></td></tr>';
+      echo '<td><span>' . $_SESSION['pilihan_kondisi'][$kondisi]. '</span></td></tr>';
       }
     }
     ?>
@@ -223,11 +229,11 @@ if(isset($_POST['submit'])){
                 <tr>
                   <td>
                     <?php
-                        if(empty($nmpkt) ){
+                        if(empty( $_SESSION["nama_penyakit"]) ){
                           echo "<h5>Kamu tidak menderita penyakit anemia / 0% (0)</h5>";
                         }
                         else{
-                            echo "<h5>" . $nmpkt[1] . " / " . round($vlpkt[1], 2) * 100 . " % (" . $vlpkt[1] . ")</h5>";
+                            echo "<h5>" .  $_SESSION["nama_penyakit"] . " / " . round($_SESSION["nilai_cf"], 2) * 100 . " % (" . $_SESSION["nilai_cf"] . ")</h5>";
             
                         }
                     ?>
@@ -249,13 +255,13 @@ if(isset($_POST['submit'])){
               <tbody>
                   <tr>
                   <?php
-                        if(empty($idpkt) || empty($arspkt) ){
-                          echo "";
-                        }
-                        else{
-                            echo "<td>" . $arspkt[$idpkt[1]] . "</td>";
+                        // if(empty($idpkt) || empty($arspkt) ){
+                        //   echo "";
+                        // }
+                        // else{
+                            echo "<td>" . $_SESSION["srn_penyakit"] . "</td>";
             
-                        }
+                        // }
                     ?>
                   </tr>
               </tbody>
@@ -270,6 +276,14 @@ if(isset($_POST['submit'])){
         <a href="index.php"><input class="btn btn-danger selesai"  type="button" value="Selesai"/></a>
     </div>
     </div>
+    <?php
+    $ig = 0;
+   
+    foreach ($argejala as $key => $kondisi) {
+      echo '<td><span>' . $_SESSION['kondisi_text'] . '</span></td></tr>';
+      }
+    ?>
+    
   
     
     

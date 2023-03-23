@@ -1,9 +1,10 @@
 <?php
 include '../../connect.php';
 session_start();
-if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit']))) {
+if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (isset($_SESSION['carihistory']))) {
     unset($_SESSION['carigejala']);
     unset($_SESSION['caripenyakit']);
+    unset($_SESSION['carihistory']);
 }
 if(isset($_POST['tombolcari'])){
     $cari = $_POST['cari'];
@@ -36,6 +37,7 @@ if(isset($_POST['tombolcari'])){
             </form>
             </div>  
         </div>
+    <div style="overflow-x:auto;">
     <table class="table">
   <thead>
     <tr>
@@ -91,8 +93,8 @@ if(isset($_POST['tombolcari'])){
                     <td style="text-align: center;">'.$MB.'</td>
                     <td style="text-align: center;">'.$MD.'</td>
                     <td style="text-align: center;">
-                    <button id="update"><a href="UpdateRule.php?ruleid='.$id.'"  style="text-decoration: none">Update</a></button>
-                    <button id="delete"><a href="DeleteRule.php?ruleid='.$id.'"  style="text-decoration: none">Delete</a></button> 
+                    <button id="update"><a href="UpdateRule.php?ruleid='.$id.'"  style="text-decoration: none"><i class="fa fa-edit"></i></a></button>
+                    <button id="delete"><a href="DeleteRule.php?ruleid='.$id.'"  style="text-decoration: none"><i class="fa fa-trash" aria-hidden="true"></i></a></button> 
                     </td>
                  </tr>';
         }
@@ -100,6 +102,7 @@ if(isset($_POST['tombolcari'])){
     ?>
   </tbody>
 </table>
+</div>
 <div class="pagination" style="float:right;">
     <?php if ($halamanAktif > 1): ?>
         <a href="?halaman=<?php echo $halamanAktif - 1 ?>">

@@ -1,8 +1,9 @@
 <?php
 include '../../connect.php';
 session_start();
-if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit']))) {
+if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (isset($_SESSION['cari'])) ) {
     unset($_SESSION['carigejala']);
+    unset($_SESSION['cari']);
     unset($_SESSION['caripenyakit']);
 }
 if(isset($_POST['tombolcari'])){
@@ -38,6 +39,7 @@ if(isset($_POST['tombolcari'])){
             </form>
             </div>  
         </div>
+        <div style="overflow-x:auto;">
     <table class="table">
   <thead>
     <tr>
@@ -102,7 +104,7 @@ if(isset($_POST['tombolcari'])){
                     <td style="text-align: center;">'.$penyakit.'</td>
                     <td style="text-align: center;">'.$cf.'</td>
                     <td style="text-align: center;">
-                    <button id="delete"><a href="DeleteHistory.php?historyid='.$id.'"  style="text-decoration: none">Delete</a></button> 
+                    <button id="delete"><a href="DeleteHistory.php?historyid='.$id.'"  style="text-decoration: none"><i class="fa fa-trash" aria-hidden="true"></i></a></button> 
                     </td>
                  </tr>';
         }
@@ -110,6 +112,7 @@ if(isset($_POST['tombolcari'])){
     ?>
   </tbody>
 </table>
+</div>
 <div class="pagination" style="float:right;">
     <?php if ($halamanAktif > 1): ?>
         <a href="?halaman=<?php echo $halamanAktif - 1 ?>">

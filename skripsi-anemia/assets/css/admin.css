@@ -7,7 +7,7 @@ body{
 }
 
 #update{
-    padding: 5px 7px 5px 7px;
+    padding: 5px 8px 5px 10px;
     background-color: #0275d8;
     border-radius: 5px;
     border: 1px  white;
@@ -18,6 +18,12 @@ body{
     background-color: #dc3d31;
     border-radius: 5px;
     border: 1px  white;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
 
 #update a{

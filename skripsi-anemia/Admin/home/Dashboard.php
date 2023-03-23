@@ -2,10 +2,11 @@
 include '../../connect.php';
 session_start();
 
-if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (isset($_SESSION['cari']))) {
+if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (isset($_SESSION['cari'])) || (isset($_SESSION['carihistory']))) {
     unset($_SESSION['carigejala']);
     unset($_SESSION['caripenyakit']);
     unset($_SESSION['cari']);
+    unset($_SESSION['carihistory']);
 }
 ?>
 <!doctype html>
