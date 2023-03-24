@@ -1,6 +1,10 @@
 <?php
 include './connect.php';
 session_start();
+unset($_SESSION['nama']);
+unset($_SESSION['umur']);
+unset($_SESSION['jenis']);
+unset($_SESSION['domisili']);
 unset($_SESSION['nama_penyakit']);
 unset($_SESSION['nilai_cf']);
 unset($_SESSION['srn_penyakit']);
