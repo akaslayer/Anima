@@ -5,130 +5,10 @@ session_start();
 //   header("Location: diagnosa.php");
 //   die();
 // }
-
-
-error_reporting(0);
-if(isset($_POST['submit'])){
-    date_default_timezone_set("Asia/Jakarta");
-    $inptanggal = date('Y-m-d');
-    $arbobot = array('0', '1', '0.8', '0.6', '0.4', '0');
-    // $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
-    $argejala = array();
-
-    for ($i = 0; $i < count($_POST['kondisi']); $i++) {
-      $arkondisi = explode("_", $_POST['kondisi'][$i]);
-      if (strlen($_POST['kondisi'][$i]) > 1) {
-        $argejala += array($arkondisi[0] => $arkondisi[1]);
-      }
-    }
-
-    if(empty($argejala)){
-       echo '<script type = "text/javascript">';
-       echo 'alert("Mohon isi setidaknya 1 gejala");';
-       echo 'window.location.href = "diagnosa.php"';
-       echo '</script>';
-       die();
-    }
-
-
-    $arkondisitext[1] = "Pasti";
-    $arkondisitext[2] = "Hampir Pasti";
-    $arkondisitext[3] = "Kemungkinan Besar";
-    $arkondisitext[4] = "Mungkin";
-    $arkondisitext[5] = "Tidak";
-    
-
-    $sqlpkt = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    while ($rpkt = mysqli_fetch_array($sqlpkt)) {
-      $arpkt[$rpkt['id_penyakit']] = $rpkt['nama_penyakit'];
-      $arspkt[$rpkt['id_penyakit']] = $rpkt['srn_penyakit'];
-    }
-
-    //print_r($arkondisitext);
-// -------- perhitungan certainty factor (CF) ---------
-// --------------------- START ------------------------
-    $sqlpenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    $arpenyakit = array();
-    while ($rpenyakit = mysqli_fetch_array($sqlpenyakit)) {
-      $cftotal_temp = 0;
-      $cf = 0;
-      $sqlgejala = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
-      $cflama = 0;
-      while ($rgejala = mysqli_fetch_array($sqlgejala)) {
-        $arkondisi = explode("_", $_POST['kondisi'][0]);
-        $gejala = $arkondisi[0];
-
-        for ($i = 0; $i < count($_POST['kondisi']); $i++) {
-          $arkondisi = explode("_", $_POST['kondisi'][$i]);
-          $gejala = $arkondisi[0];
-          if ($rgejala['id_gejala'] == $gejala) {
-            $cf = ($rgejala['mb'] - $rgejala['md']) * $arbobot[$arkondisi[1]];
-            if (($cf >= 0) && ($cf * $cflama >= 0)) {
-              $cflama = $cflama + ($cf * (1 - $cflama));
-            }
-            if ($cf * $cflama < 0) {
-              $cflama = ($cflama + $cf) / (1 - Math . Min(Math . abs($cflama), Math . abs($cf)));
-            }
-            if (($cf < 0) && ($cf * $cflama >= 0)) {
-              $cflama = $cflama + ($cf * (1 + $cflama));
-            }
-          }
-        }
-      }
-      if ($cflama > 0) {
-        $arpenyakit += array($rpenyakit['id_penyakit'] => number_format($cflama, 4));
-      }
-    }
-
-    arsort($arpenyakit);
-
-    // $inpgejala = serialize($argejala);
-    // $inppenyakit = serialize($arpenyakit);
-
-    // $np1 = 0;
-    // foreach ($arpenyakit as $key1 => $value1) {
-    //   $np1++;
-    //   $idpkt1[$np1] = $key1;
-    //   $vlpkt1[$np1] = $value1;
-    // }
-
-    $np = 0;
-    foreach ($arpenyakit as $key => $value) {
-      $np++;
-      $idpkt[$np] = $key;
-      $nmpkt[$np] = $arpkt[$key];
-      $vlpkt[$np] = $value;
-    }
-
-      $nama = $_SESSION["nama"];
-      $umur = $_SESSION["umur"];
-      $jenis = $_SESSION["jenis"];
-      $domisili = $_SESSION["domisli"];
-      $_SESSION["nama_penyakit"] = $nmpkt[1];
-      $_SESSION["nilai_cf"] = $vlpkt[1];
-      $_SESSION["srn_penyakit"] = $arspkt[$idpkt[1]];
-      $_SESSION["gejala"] = $argejala;
-      $_SESSION["pilihan_kondisi"] = $arkondisitext;
-
-      mysqli_query($con, "INSERT INTO tbl_history(
-        nama_user,
-        umur,
-        jenis_kelamin,
-        domisili,
-        tanggal_diagnosa,
-        hasil_diagnosa,
-        nilai_cf
-      ) 
-      VALUES(
-      '$nama',
-      '$umur',
-      '$jenis',
-      '$domisili',
-      '$inptanggal',
-      '$nmpkt[1]',
-      '$vlpkt[1]'
-      )");
+if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
+  header('location:diagnosa.php');
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -276,13 +156,7 @@ if(isset($_POST['submit'])){
         <a href="index.php"><input class="btn btn-danger selesai"  type="button" value="Selesai"/></a>
     </div>
     </div>
-    <?php
-    $ig = 0;
-   
-    foreach ($argejala as $key => $kondisi) {
-      echo '<td><span>' . $_SESSION['kondisi_text'] . '</span></td></tr>';
-      }
-    ?>
+
     
   
     

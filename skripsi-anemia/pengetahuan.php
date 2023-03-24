@@ -5,6 +5,11 @@ unset($_SESSION['nama']);
 unset($_SESSION['umur']);
 unset($_SESSION['jenis']);
 unset($_SESSION['domisili']);
+unset($_SESSION['nama_penyakit']);
+unset($_SESSION['nilai_cf']);
+unset($_SESSION['srn_penyakit']);
+unset($_SESSION['gejala']);
+unset($_SESSION['pilihan_kondisi']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -100,176 +105,6 @@ unset($_SESSION['domisili']);
 <script src="assets/js/pengetahuan.js" rel="stylesheet"></script>
 </body>
 </html>
-<!-- <section id="jenispenyakit" class="departments" style="margin-top:100px">
-//       <div class="container">
-
-//         <div class="section-title mb-4">
-//           <h2>Jenis penyakit gigi dan mulut </h2>
-//           <p>
-//             Jenis penyakit gigi dan mulut ini sangat
-//             banyak, namun pada aplikasi ini hanya terdapat 4
-//             penyakit saja.
-//           </p>
-//         </div>
-
-//         <div class="row">
-//           <div class="col-lg-3">
-//             <ul class="nav nav-tabs flex-column">
-//               <li class="nav-item">
-//                 <a class="nav-link active show" data-toggle="tab" href="#tab-1">Gingivitis (Radang gusi)</a>
-//               </li>
-//               <li class="nav-item">
-//                 <a class="nav-link" data-toggle="tab" href="#tab-2">Karies Gigi (gigi berlubang)</a>
-//               </li>
-//               <li class="nav-item">
-//                 <a class="nav-link" data-toggle="tab" href="#tab-3">Karang Gigi</a>
-//               </li>
-//               <li class="nav-item">
-//                 <a class="nav-link" data-toggle="tab" href="#tab-4">Stomatitis</a>
-//               </li>
-
-//             </ul>
-//           </div>
-//           <div class="col-lg-9 mt-5 mt-lg-0">
-//             <div class="tab-content">
-//               <div class="tab-pane active show" id="tab-1">
-//                 <div class="row">
-//                   <div class="col-lg-8 details order-2 order-lg-1">
-//                     <h3>Gingivitis (Radang gusi)</h3>
-//                     <p class="font-italic">Radang gusi atau gingivitis adalah peradangan pada gusi yang ditandai oleh memerahnya gusi di sekitar akar gigi. Gingivitis terjadi ketika sisa makanan di gigi dan gusi mengeras menjadi plak.
-
-//                     <p>
-
-//                       Gejala Radang Gusi :
-//                     </p>
-//                     <ol>
-//                       <li>
-//                         Bau mulut.
-//                       </li>
-//                       <li>
-//                         Gusi bengkak, merah dan berdarah
-
-//                       </li>
-//                       <li>
-//                         Gingival berkaratin, gaung luka diantara
-//                         gigi dan gusi
-
-//                       </li>
-//                       <li>
-//                         Pembesaran limfoid di kepala, leher, atau
-//                         rahang
-
-//                       </li>
-//                       <li>Demam</li>
-//                       <li>Nyeri gusi</li>
-//                     </ol>
-//                   </div>
-//                 </div>
-//               </div>
-//               <div class="tab-pane" id="tab-2">
-//                 <div class="row">
-//                   <div class="col-lg-8 details order-2 order-lg-1">
-//                     <h3>Karies Gigi (gigi berlubang)</h3>
-//                     <p class="font-italic">Karies gigi disebabkan oleh sisa-sisa makanan dan gula pada permukaan gigi yang berubah membentuk asam oleh karena bakteri. Sebelum hal itu terjadi, mari lakukan tindakan pencegahan sedini mungkin.
-//                     <p>
-//                       Gejala Karies Gigi :
-//                     </p>
-//                     <ol>
-//                       <li>
-//                         Sakit gigi
-//                       </li>
-//                       <li>
-//                         Nyeri ringan hingga tajam saat
-//                         mengonsumsi makanan manis
-//                       </li>
-//                       <li>
-//                         Noda berwarna cokelat, hitam atau putih
-//                         pada permukaan gigi
-//                       </li>
-//                       <li>
-//                         Nyeri saat menggigit makanan
-//                       </li>
-
-//                     </ol>
-//                   </div>
-
-//                 </div>
-//               </div>
-//               <div class="tab-pane" id="tab-3">
-//                 <div class="row">
-//                   <div class="col-lg-8 details order-2 order-lg-1">
-//                     <h3>Karang Gigi</h3>
-//                     <p class="font-italic">Karang gigi adalah kondisi di mana terdapat lapisan seperti kotoran yang terletak
-//                       di gigi dan sulit dihilangkan meski telah dibersihkan atau disikat.
-//                       Karang gigi disebabkan oleh adanya plak yang mengeras dan tidak mendapat penanganan. Plak itu sendiri adalah lapisan
-//                       licin dan tipis pada gigi yang terbentuk akibat adanya sisa-sisa makanan yang tertinggal di gigi.
-//                     <p>
-//                       Gejala Karang Gigi :
-//                     </p>
-//                     <ol>
-//                       <li>
-//                         Bau mulut
-//                       </li>
-//                       <li>
-//                         Gusi berdarah dan kemerahan
-//                       </li>
-//                       <li>
-//                         Gusi membengkak dan atau bernanah
-//                       </li>
-//                       <li>
-//                         Gusi melorot atau gigi tampak menjadi
-//                         panjang
-//                       </li>
-//                       <li>
-//                         Gigi goyang dan sensitive
-//                       </li>
-//                       <li>
-//                         Gigi menjadi meregang (timbul celahcelah diantara gigi)
-//                       </li>
-//                       <li>
-//                         Gigi menjadi linu padahal tidak ada yang
-//                         berlubang
-//                       </li>
-//                     </ol>
-//                   </div>
-
-//                 </div>
-//               </div>
-//               <div class="tab-pane" id="tab-4">
-//                 <div class="row">
-//                   <div class="col-lg-8 details order-2 order-lg-1">
-//                     <h3>Stomatitis</h3>
-//                     <p class="font-italic">Stomatitis adalah radang yang terjadi pada mukosa mulut, biasanya berupa bercak putih kekuningan.</p>
-//                     <p class="font-italic">Stomatitis dapat disebabkan oleh beberapa faktor, antara lain defisiensi vitamin seperti zat besi, asam folat, vitamin B12 atau B kompleks, psikologis, trauma, endokrin, herediter, alergi, imunologi, hingga tergigit, luka ketika menyikat gigi, alergi terhadap makanan ataupun adanya infeksi oleh bakteri.</p>
-//                     <p>
-//                       Gejala Stomatitis :
-//                     </p>
-//                     <ol>
-//                       <li>
-//                         Hilangnya nafsu makan
-//                       </li>
-//                       <li>
-//                         Terdapat luka yang cukup besar dimulut
-//                       </li>
-//                       <li>
-//                         Luka biasanya terjadi beberapa kali pada
-//                         area yang sama
-//                       </li>
-//                       <li>
-//                         Luka menyebar ke bagian luar bibir
-//                       </li>
-//                       <li>Tidak dapat makan dan minum</li>
-//                     </ol>
-//                   </div>
-
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-
-//       </div>
-//     </section>End Departments Section -->
 
 
 

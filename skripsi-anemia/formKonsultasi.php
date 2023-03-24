@@ -1,6 +1,11 @@
 <?php
 include './connect.php';
 session_start();
+unset($_SESSION['nama_penyakit']);
+unset($_SESSION['nilai_cf']);
+unset($_SESSION['srn_penyakit']);
+unset($_SESSION['gejala']);
+unset($_SESSION['pilihan_kondisi']);
 ?>
 
 <!doctype html>
