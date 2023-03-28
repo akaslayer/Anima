@@ -27,7 +27,7 @@ unset($_SESSION['pilihan_kondisi']);
     <?php include 'Navbar.php'; ?>
         <div class="container">
             <form action = "formKonsultasi.php" method="post">
-                <h2 style="margin-bottom:30px;">Form Konsultasi</h2>
+                <h2 style="margin-bottom:30px;">Form Diagnosa</h2>
                 <div class="mb-2 mt-4">
                     <label>Nama Pasien</label>
                     <input type = "text"  name = "nama"  required>

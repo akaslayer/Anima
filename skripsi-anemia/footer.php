@@ -30,9 +30,9 @@
     <div class="footer-left">
         <h3>Anima<span></span></h3>
         <p class ="footer-links">
-            <a href="#">Home</a> |
-            <a href="#">Pengetahuan</a> |
-            <a href="#">Login</a>
+            <a href="index.php">Home</a> |
+            <a href="pengetahuan.php">Pengetahuan</a> |
+            <a href="login.php">Login</a>
         </p>
         <p class="footer-app-name">Copyright © 2023 <strong>Anima</strong> designed by <span>Hendry Tjahaja Surijanto Putra</span> </p>
     </div>
