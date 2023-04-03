@@ -47,7 +47,7 @@ unset($_SESSION['pilihan_kondisi']);
                 <label>Domisili</label>
                 <input type = "text"  name = "domisili"  required>
                 </div>
-                <input  id="btn_submit"type ="submit"  name="submit" value ="SUBMIT">
+                <input  id="btn_submit"type ="submit"  name="submit" value ="Submit">
             </form>
         </div>
         <?php
