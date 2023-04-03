@@ -34,7 +34,7 @@
             <a href="pengetahuan.php">Pengetahuan</a> |
             <a href="login.php">Login</a>
         </p>
-        <p class="footer-app-name">Copyright © 2023 <strong>Anima</strong> designed by <span>Hendry Tjahaja Surijanto Putra</span> </p>
+        <p class="footer-app-name">Copyright © 2023 <strong>Anima</strong> di desain oleh <span>Hendry Tjahaja Surijanto Putra</span> </p>
     </div>
     <div class="footer-center">
         <div>
@@ -48,8 +48,8 @@
     </div>
     <div class="footer-right">
         <p class="footer-app-about">
-            <span>About Anima</span>
-            <strong>Anima</strong> is an expert system website that can detect anemia diseases that can help you prevent and treat for early treatment
+            <span>Tentang Anima</span>
+            <strong>Anima</strong> adalah website sistem pakar yang dapat membantu kamu untuk mendeteksi penyakit anemia dini dan melakukan pengobatan.
         </p>
         <div class="footer-icons">
             <a href="https://github.com/akaslayer"><i class="fa-brands fa-github"></i></a>

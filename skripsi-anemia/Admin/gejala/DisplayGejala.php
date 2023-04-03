@@ -33,7 +33,7 @@ if(isset($_POST['tombolcarigejala'])){
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayGejala.php">
                     <input type="text" name="carigejala" placeholder="Nama Gejala" autofocus value="<?php echo $carigejala; ?>">
-                    <button id="cari_btn" type="submit" name="tombolcarigejala"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>                              
+                    <button id="cari_btn" type="submit" name="tombolcarigejala"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Cari</button>                              
             </form>
             </div>  
         </div>

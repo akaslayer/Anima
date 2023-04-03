@@ -89,7 +89,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
             <div id="card_welcome"class="card mb-5" >
                 <div class="card-body">
                     <h1>Selamat Datang</h1>
-                    <h2 id="desc">Di Website Sistem Pakar Diagnosa Penyakit Anemia Admin</h2>
+                    <h2 id="desc">Di Website Diagnosa Penyakit Anemia Admin</h2>
                     <div class='ImageDash'>
                         <img id="dashboard" style="" src="./../../assets/images/dashboard.png"/>
                     </div>

@@ -31,13 +31,13 @@ if(isset($_POST['submit'])){
   <?php include("../sidebar.php");?>
   <div class="container_rule">
   <form method="post">
-  <h1>Tambah Penyakit Baru</h1>
+  <h1>Tambah Penyakit</h1>
   <div class="mb-2 mt-4">
     <label>Nama Penyakit<i style="color:red;">*</i></label>
     <input type="text" class="form-control" name="penyakit" autocomplete="off">
   </div>
   <div class="mb-2 mt-4">
-    <label>Saran Penyakit<i style="color:red;">*</i></label>
+    <label>Saran<i style="color:red;">*</i></label>
     <textarea class="form-control" name="saran" autocomplete="off" rows="5"></textarea>
   </div>
   <div class="RuleButton">

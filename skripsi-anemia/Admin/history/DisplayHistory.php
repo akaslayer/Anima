@@ -35,7 +35,7 @@ if(isset($_POST['tombolcari'])){
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayHistory.php">
                     <input type="text" name="carihistory" placeholder="Nama User" autofocus value="<?php echo $carihistory; ?>">
-                    <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>                      
+                    <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Cari</button>                      
             </form>
             </div>  
         </div>

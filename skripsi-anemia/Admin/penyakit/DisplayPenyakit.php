@@ -34,7 +34,7 @@ if(isset($_POST['tombolcari'])){
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayPenyakit.php">
                     <input type="text" name="caripenyakit" placeholder="Nama Penyakit" autofocus value="<?php echo $caripenyakit; ?>">
-                    <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>
+                    <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Cari</button>
                                            
             </form>
             </div>
@@ -45,7 +45,7 @@ if(isset($_POST['tombolcari'])){
     <tr>
       <th scope="col">No</th>
       <th scope="col" style="width:25%">Nama Penyakit</th>
-      <th scope="col" style="width:55%">Saran Penyakit</th>
+      <th scope="col" style="width:55%">Saran</th>
       <th scope="col" style="width:15%">Aksi</th>
     </tr>
   </thead>
