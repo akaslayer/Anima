@@ -97,56 +97,52 @@ if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
     </table>
     </div>
 
-
-      <div class="jenisPenyakit mt-3 mb-4">
-        <table class='table table-bordered'>
-          <thead>
-            <tr>
-              <th width="100%">Jenis Penyakit yang diderita</th>
-            </tr>
-            </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <?php
-                        if(empty( $_SESSION["nama_penyakit"]) ){
-                          echo "<h5>Kamu tidak menderita penyakit anemia / 0% (0)</h5>";
-                        }
-                        else{
-                            echo "<h5>" .  $_SESSION["nama_penyakit"] . " / " . round($_SESSION["nilai_cf"], 2) * 100 . " % (" . $_SESSION["nilai_cf"] . ")</h5>";
+    <div class="dataPasien mt-3 mb-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="3">Hasil Analisa Penyakit Yang Diderita</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td width="15%">Nama Penyakit</td>
+          <td width="3%" >:</td>
+          <?php 
+          if(empty( $_SESSION["nama_penyakit"]) ){
+            echo "<td>Kamu tidak menderita penyakit anemia </td>";
+          }else{
+            echo "<td>". $_SESSION["nama_penyakit"] . "</td>";
+          }
+          ?> 
+        </tr>
+        <tr>
+          <td width="20%">Presentase</td>
+          <td width="3%" >:</td>
+          <?php 
+          if(empty( $_SESSION["nilai_cf"]) ){
+            echo "<td>0 % (0) </td>";
             
-                        }
-                    ?>
-                </td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
-
-
-
-      <div class="saranPenyakit mt-3 mb-4">
-        <table class='table table-bordered'>
-          <thead>
-              <tr>
-                <th width="100%">Saran</th>
-              </tr>
-          </thead>
-              <tbody>
-                  <tr>
-                  <?php
-                        // if(empty($idpkt) || empty($arspkt) ){
-                        //   echo "";
-                        // }
-                        // else{
-                            echo "<td>" . $_SESSION["srn_penyakit"] . "</td>";
+          }else{
+            echo "<td>" .round($_SESSION["nilai_cf"], 2) * 100 . " % (" . $_SESSION["nilai_cf"] . ")" ."</td>";
+          }
+          ?> 
+        </tr>
+        <tr>
+          <td width="15%">Disarankan</td>
+          <td width="3%">:</td>
+          <?php 
+          if(empty( $_SESSION["srn_penyakit"]) ){
+            echo "<td> - </td>";
             
-                        // }
-                    ?>
-                  </tr>
-              </tbody>
-        </table>
-      </div>
+          }else{
+            echo "<td>" . $_SESSION["srn_penyakit"] ."</td>";
+          }
+          ?> 
+        </tr>
+</tbody>
+</table>
+  </div>
     </div>
     <div class="btn-print">
         <button class="btn btn-sucess print" onclick="printDiv('printableArea')" id="print-btn"><i class="fa-solid fa-print"></i>Cetak</button>

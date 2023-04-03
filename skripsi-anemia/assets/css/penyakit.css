@@ -27,6 +27,11 @@ form{
     margin-bottom: 30px;
 }
 
+.container_rule h1 .book{
+    padding-bottom: 5px;
+    margin-right: 10px;
+}
+
 
 .RuleButton{
     float: right;

@@ -45,7 +45,7 @@ if(isset($_POST['tombolcari'])){
     <tr>
       <th scope="col">No</th>
       <th scope="col" style="width:25%">Nama Penyakit</th>
-      <th scope="col" style="width:55%">Saran</th>
+      <th scope="col" style="width:55%">Disarankan</th>
       <th scope="col" style="width:15%">Aksi</th>
     </tr>
   </thead>

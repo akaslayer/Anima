@@ -31,6 +31,8 @@ if(!isset($_SESSION['nama'])){
 <?php include 'Navbar.php';?>
 <div class="title-section">
   <h2>Diagnosa Penyakit Anemia</h2>
+  <hr size="2" width="45%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
+    <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih Gejala yang sedang anda rasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
 </div>
 <div class="container mt-5">
 <form name=text_form method="POST" action ="diagnosa.php">
