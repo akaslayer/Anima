@@ -31,8 +31,8 @@ if(!isset($_SESSION['nama'])){
 <?php include 'Navbar.php';?>
 <div class="title-section">
   <h2>Diagnosa Penyakit Anemia</h2>
-  <hr size="2" width="45%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
-    <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih Gejala yang sedang anda rasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
+  <hr size="2" width="65%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
+    <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
 </div>
 <div class="container mt-5">
 <form name=text_form method="POST" action ="diagnosa.php">
@@ -41,7 +41,7 @@ if(!isset($_SESSION['nama'])){
     <tr>
       <th scope="col">No</th>
       <th scope="col" style="width:70%">Nama Gejala</th>
-      <th scope="col" style="width:20%">Pilih Kondisi</th>
+      <th scope="col" style="width:20%">Tingkat Keyakinan</th>
     </tr>
   </thead>
   <tbody class="pilihkondisi">
@@ -53,17 +53,18 @@ if(!isset($_SESSION['nama'])){
     echo "<tr><td class=no>$i</td>";
     echo "<td class=gejala>$r[nama_gejala]</td>";
     echo '<td class="opsi"><select name="kondisi[]" id="sl' . $i . '" class="opsikondisi"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';?>
-      <option id="1" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 1; ?>">Pasti</option>
-      <option id="2" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 2; ?>">Hampir Pasti</option>
-      <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Kemungkinan Besar</option>
-      <option id="4" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 4; ?>">Mungkin</option>
-      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 5; ?>">Tidak</option>
+      <option id="1" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
+      <option id="2" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 2; ?>">Yakin</option>
+      <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
+      <option id="4" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 4; ?>">Kurang Yakin</option>
+      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 5; ?>">Tidak Tahu</option>
+      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 6; ?>">Tidak</option>
       <?php
       echo '</select></td>';
       ?>
       <script type="text/javascript">
           $(document).ready(function () {
-            var arcolor = new Array('black', 'red', 'blue', 'green', 'purple', 'brown');
+            var arcolor = new Array('black', 'red', 'blue', 'green', 'purple', 'brown','pink');
             setColor();
             $('.pilihkondisi').on('change', 'select#sl<?php echo $i;?>', function() {
               setColor();
@@ -90,7 +91,7 @@ if(!isset($_SESSION['nama'])){
 if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
     $inptanggal = date('Y-m-d');
-    $arbobot = array('0', '1', '0.8', '0.6', '0.4', '0');
+    $arbobot = array('0', '1', '0.8', '0.6', '0.4','0.2', '0');
     // $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
     $argejala = array();
 
@@ -105,7 +106,7 @@ if(isset($_POST['submit'])){
       echo '<script type="text/javascript">';
       echo 'swal({
                     title: "Error!",
-                    text: "Pilih Setidaknya 1 Kondisi Dari Gejala Yang Sedang Dirasakan",
+                    text: "Pilih Setidaknya 1 Tingkat Keyakinan Dari Gejala Yang Sedang Anda Dirasakan",
                     type: "error",
                     timer: 2000,
                     showConfirmButton: false
@@ -115,11 +116,12 @@ if(isset($_POST['submit'])){
                 die();
                             
     }else{
-    $arkondisitext[1] = "Pasti";
-    $arkondisitext[2] = "Hampir Pasti";
-    $arkondisitext[3] = "Kemungkinan Besar";
-    $arkondisitext[4] = "Mungkin";
-    $arkondisitext[5] = "Tidak";
+    $arkondisitext[1] = "Sangat Yakin";
+    $arkondisitext[2] = "Yakin";
+    $arkondisitext[3] = "Cukup Yakin";
+    $arkondisitext[4] = "Kurang Yakin";
+    $arkondisitext[5] = "Tidak Tahu";
+    $arkondisitext[6] = "Tidak";
     
 
     $sqlpkt = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");

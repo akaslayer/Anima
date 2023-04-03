@@ -54,7 +54,7 @@ unset($_SESSION['pilihan_kondisi']);
     <div class="section-jenis mb-4 mt-5">
            <h2>Jenis penyakit Anemia</h2>
            <p>
-            5 jenis penyakit anemia yang dapat di diagnosis oleh website sistem pakar
+            5 jenis penyakit anemia yang dapat di diagnosa oleh website sistem pakar
            </p>
         </div>
     <div class="container mt-4">
