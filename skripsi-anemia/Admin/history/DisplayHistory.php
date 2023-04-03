@@ -34,7 +34,7 @@ if(isset($_POST['tombolcari'])){
         <button id="history_btn"><a href="Export.php" style="color:white;"><i style="margin-right:5px"class="fa fa-download"></i>Export</a></button>
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayHistory.php">
-                    <input type="text" name="carihistory" placeholder="Search Name" autofocus value="<?php echo $carihistory; ?>">
+                    <input type="text" name="carihistory" placeholder="Nama User" autofocus value="<?php echo $carihistory; ?>">
                     <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>                      
             </form>
             </div>  
@@ -46,12 +46,12 @@ if(isset($_POST['tombolcari'])){
       <th scope="col" width="5%">No</th>
       <th scope="col">Tanggal</th>
       <th scope="col" width="10%">Nama</th>
-      <th scope="col">Gender</th>
+      <th scope="col">Jenis Kelamin</th>
       <th scope="col">Umur</th>
       <th scope="col">Domisili</th>
       <th scope="col">Hasil</th>
       <th scope="col" width="7%">CF</th>
-      <th scope="col">Operations</th>
+      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>

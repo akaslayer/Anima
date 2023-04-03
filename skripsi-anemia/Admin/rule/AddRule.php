@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
   <div class="container_rule">
   
   <form method="post">
-  <h1>Add New Rules</h1>
+  <h1>Tambah Rule Baru</h1>
   <div class="rules mb-2 mt-5">
     <label>Penyakit<i style="color:red;">*</i></label>
     <select  name="penyakit" id="penyakit" required>

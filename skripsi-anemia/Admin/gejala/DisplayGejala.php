@@ -29,10 +29,10 @@ if(isset($_POST['tombolcarigejala'])){
   <?php include("../sidebar.php");?>
   <div class="container">
         <div class="searchAndRule">
-        <button id="rule_btn"><a href="AddGejala.php"  style="text-decoration: none;color:white;">Add Symptoms<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
+        <button id="rule_btn"><a href="AddGejala.php"  style="text-decoration: none;color:white;">Tambah Gejala<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayGejala.php">
-                    <input type="text" name="carigejala" placeholder="Search Symptoms" autofocus value="<?php echo $carigejala; ?>">
+                    <input type="text" name="carigejala" placeholder="Nama Gejala" autofocus value="<?php echo $carigejala; ?>">
                     <button id="cari_btn" type="submit" name="tombolcarigejala"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>                              
             </form>
             </div>  
@@ -43,7 +43,7 @@ if(isset($_POST['tombolcarigejala'])){
     <tr>
       <th scope="col">No</th>
       <th scope="col" style="width:70%">Nama Gejala</th>
-      <th scope="col" style="width:20%">Operations</th>
+      <th scope="col" style="width:20%">Aksi</th>
     </tr>
     </tr>
   </thead>

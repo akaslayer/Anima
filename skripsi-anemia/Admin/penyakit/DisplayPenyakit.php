@@ -30,10 +30,10 @@ if(isset($_POST['tombolcari'])){
     <?php include("../sidebar.php");?>
     <div class="container">
         <div class="searchAndRule">
-        <button id="rule_btn"><a href="AddPenyakit.php"  style="text-decoration: none;color:white;">Add Diseases<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
+        <button id="rule_btn"><a href="AddPenyakit.php"  style="text-decoration: none;color:white;">Tambah Penyakit<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayPenyakit.php">
-                    <input type="text" name="caripenyakit" placeholder="Search Diseases" autofocus value="<?php echo $caripenyakit; ?>">
+                    <input type="text" name="caripenyakit" placeholder="Nama Penyakit" autofocus value="<?php echo $caripenyakit; ?>">
                     <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>
                                            
             </form>
@@ -46,7 +46,7 @@ if(isset($_POST['tombolcari'])){
       <th scope="col">No</th>
       <th scope="col" style="width:25%">Nama Penyakit</th>
       <th scope="col" style="width:55%">Saran Penyakit</th>
-      <th scope="col" style="width:15%">Operations</th>
+      <th scope="col" style="width:15%">Aksi</th>
     </tr>
   </thead>
   <tbody>

@@ -43,8 +43,8 @@ if(isset($_POST['submit'])){
   <?php include("../sidebar.php");?>
   <div class="container_rule">
   <form method="post">
-  <h1>Update Rules</h1>
-  <div class="mb-2 mt-5">
+  <h1>Update Rule</h1>
+  <div class="mb-2 mt-4">
     <label>Penyakit<i style="color:red;">*</i></label>
     <select name="penyakit" id="penyakit" required>
         <option value="<?php echo $kode_penyakit;?>"><?php echo $penyakit;?></option>

@@ -75,8 +75,8 @@ unset($_SESSION['pilihan_kondisi']);
                     // echo 'swal("Error!", "Invalid Username or Password", "warning");';
                     echo 'swal({
                         title: "Error!",
-                        text: "Invalid Username or Password",
-                        type: "warning",
+                        text: "Username Atau Password Salah",
+                        type: "error",
                         timer: 2000,
                         showConfirmButton: false
                       })';
@@ -86,7 +86,7 @@ unset($_SESSION['pilihan_kondisi']);
                     echo '<script type="text/javascript">';
                     echo 'swal({
                         title: "Success!",
-                        text: "Login Succesfully",
+                        text: "Login Berhasil",
                         type: "success",
                         timer: 2000,
                         showConfirmButton: false

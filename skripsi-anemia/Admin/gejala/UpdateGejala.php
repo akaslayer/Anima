@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
   <?php include("../sidebar.php");?>
   <div class="container_rule">
   <form method="post">
-  <h1>Update Symptoms</h1>
+  <h1>Update Gejala</h1>
   <div class="mb-2 mt-3">
     <label>Nama Gejala<i style="color:red;">*</i></label>
     <input type="text" class="form-control" name="gejala" autocomplete="off" value="<?php echo $gejala;?>">

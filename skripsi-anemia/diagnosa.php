@@ -103,8 +103,8 @@ if(isset($_POST['submit'])){
       echo '<script type="text/javascript">';
       echo 'swal({
                     title: "Error!",
-                    text: "Please choose at least one symptoms",
-                    type: "warning",
+                    text: "Pilih Setidaknya 1 Kondisi Dari Gejala Yang Sedang Dirasakan",
+                    type: "error",
                     timer: 2000,
                     showConfirmButton: false
                 })';

@@ -36,7 +36,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
                             echo '<h3 class="mb-2"> No Data </h3>';
                         }
                     ?>
-                    <h2>Total Symptoms</h2>
+                    <h2>Total Gejala</h2>
                     <div class='icon'>
                     <i class="fa-solid fa-syringe"></i>
                     </div>
@@ -56,7 +56,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
                             echo '<h3 class="mb-2"> No Data </h3>';
                         }
                     ?>
-                    <h2>Total Diseases</h2>
+                    <h2>Total Penyakit</h2>
                     <div class='icon'>
                         <i class="fa-solid fa-disease mr-2"></i>
                     </div>
@@ -76,7 +76,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
                         }
                     ?>
                     
-                    <h2>Total Rules</h2>
+                    <h2>Total Rule</h2>
                     <div class='icon'>
                     <i class="fa-solid fa-scale-balanced mr-2"></i>
                     </div>
@@ -88,8 +88,8 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
     <div class="col-xs-9 col-md-12">
             <div id="card_welcome"class="card mb-5" >
                 <div class="card-body">
-                    <h1>Welcome To</h1>
-                    <h2 id="desc">Anemia Expert System Admin</h2>
+                    <h1>Selamat Datang</h1>
+                    <h2 id="desc">Di Website Sistem Pakar Diagnosa Penyakit Anemia Admin</h2>
                     <div class='ImageDash'>
                         <img id="dashboard" style="" src="./../../assets/images/dashboard.png"/>
                     </div>

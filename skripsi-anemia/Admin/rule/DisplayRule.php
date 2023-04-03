@@ -29,10 +29,10 @@ if(isset($_POST['tombolcari'])){
     <?php include("../sidebar.php");?>
     <div class="container">
         <div class="searchAndRule">
-        <button id="rule_btn"><a href="AddRule.php" style="color:white;">Add Rule<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
+        <button id="rule_btn"><a href="AddRule.php" style="color:white;">Tambah Rule<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayRule.php">
-                    <input type="text" name="cari" placeholder="Search Diseases" autofocus value="<?php echo $cari; ?>">
+                    <input type="text" name="cari" placeholder="Nama Penyakit" autofocus value="<?php echo $cari; ?>">
                     <button id="cari_btn" type="submit" name="tombolcari"><i class="fa fa-search" aria-hidden="true" style="margin-right:5px"></i>Search</button>                      
             </form>
             </div>  
@@ -46,7 +46,7 @@ if(isset($_POST['tombolcari'])){
       <th scope="col" style="width:40%">Gejala</th>
       <th scope="col">MB</th>
       <th scope="col">MD</th>
-      <th scope="col" style="width:15%">Operations</th>
+      <th scope="col" style="width:15%">Aksi</th>
     </tr>
   </thead>
   <tbody>
