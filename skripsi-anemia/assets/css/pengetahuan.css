@@ -46,7 +46,7 @@ body{
 	font-size: .875rem;
 	color: var(--black);
 	border-right: 3px solid transparent;
-  width: 250px;
+  	width: 250px;
 }
 .indicator li i {
 	font-size: 1rem;
@@ -68,6 +68,13 @@ body{
 .content li.active {
 	display: block;
 }
+
+ .content li.active ol li {
+	display: list-item;
+	font-size: .875rem;
+}
+
+
 .content li h1 {
 	font-size: 1.5rem;
 	font-weight: 600;

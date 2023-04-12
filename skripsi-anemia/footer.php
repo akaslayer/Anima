@@ -49,7 +49,7 @@
     <div class="footer-right">
         <p class="footer-app-about">
             <span>Tentang Anima</span>
-            <strong>Anima</strong> adalah website sistem pakar yang dapat membantu kamu untuk mendeteksi penyakit anemia dini dan melakukan pengobatan.
+            <strong>Anima</strong> adalah website sistem pakar yang dapat membantu kamu untuk mendeteksi penyakit anemia dini.
         </p>
         <div class="footer-icons">
             <a href="https://github.com/akaslayer"><i class="fa-brands fa-github"></i></a>

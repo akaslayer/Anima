@@ -10,6 +10,8 @@ body{
 
 }
 
+
+
 *{
     font-family: sans-serif;
     box-sizing: border-box;
@@ -44,9 +46,25 @@ body{
   border: none;
 }
 
+.note{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+}
+
 @media(max-width:880px){
     .btn-kondisi{
         margin-right: 10px;
+    }
+    .note{
+        font-size: 13px;
+        
+    }
+    .title-section hr{
+        width: 80%;
     }
    
 }

@@ -32,7 +32,7 @@ if(!isset($_SESSION['nama'])){
 <div class="title-section">
   <h2>Diagnosa Penyakit Anemia</h2>
   <hr size="2" width="65%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
-    <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
+    <p class="note">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
 </div>
 <div class="container mt-5">
 <form name=text_form method="POST" action ="diagnosa.php">
