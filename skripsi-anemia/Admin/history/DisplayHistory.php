@@ -57,7 +57,7 @@ if(isset($_POST['tombolcari'])){
   <tbody>
 
     <?php
-    $ambildata = mysqli_query($con,"Select * from tbl_history where nama_user LIKE '%$carihistory%'");
+    $ambildata = mysqli_query($con,"Select * from tbl_history where nama_user LIKE '%$carihistory%' order by tanggal_diagnosa DESC");
     $jumlahData = 10;
     $totalData = mysqli_num_rows($ambildata);
     $jumlahPagination = ceil($totalData / $jumlahData);
@@ -81,7 +81,7 @@ if(isset($_POST['tombolcari'])){
     }else{
         $end_number = $jumlahPagination;
     }
-    $ambildata_perhalaman = mysqli_query($con,"Select * from tbl_history where nama_user LIKE '%$carihistory%' LIMIT $dataAwal, $jumlahData");
+    $ambildata_perhalaman = mysqli_query($con,"Select * from tbl_history where nama_user LIKE '%$carihistory%' order by tanggal_diagnosa DESC LIMIT $dataAwal, $jumlahData");
     $nomor = 0 + $dataAwal;
     if($ambildata_perhalaman){
         while($row=mysqli_fetch_assoc($ambildata_perhalaman)){

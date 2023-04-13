@@ -78,7 +78,7 @@ unset($_SESSION['pilihan_kondisi']);
     <div class="content">
         <h1>Sistem Pakar</h1>
         <h2>Diagnosa Penyakit Anemia</h2>
-        <a href="formKonsultasi.php"class="btn-get-started scrollto">Mulai Konsultasi</a>
+        <a href="formKonsultasi.php"class="btn-get-started scrollto">Mulai Diagnosa</a>
     </div>
 </div>
     <div class="right">

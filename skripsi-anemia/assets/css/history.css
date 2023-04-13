@@ -58,13 +58,13 @@ body{
 
 .table th{
     color: black;
-    border: 0.01em solid whitesmoke;
     text-align: center;
+   
 }
 
 .table td{
-    border: 0.01em solid whitesmoke;
     text-align: justify;
+    
 }
 
 
@@ -96,7 +96,7 @@ table{
 
 .search_rule input{
     border-radius: 5px;
-    border: 0.1em solid whitesmoke;
+    border: 0.1em solid rgba(107, 107, 107, 0.221);
     margin-right: 5px;
 }
 
