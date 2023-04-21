@@ -41,8 +41,11 @@ body{
     font-weight: 500;
 }
 
-table{
-    border: 2px solid black;
+.dataPasien table{
+    border: 2px solid #d4d6d8;
+}
+.pilihanGejala table{
+    border: 2px solid #d4d6d8;
 }
 
 .btn-hasil{

@@ -28,6 +28,7 @@ if(isset($_POST['tombolcari'])){
   <body>
     <?php include("../sidebar.php");?>
     <div class="container">
+    <h1 class="judul">Daftar Rule</h1>
         <div class="searchAndRule">
         <button id="rule_btn"><a href="AddRule.php" style="color:white;">Tambah Rule<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">

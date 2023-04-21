@@ -30,6 +30,7 @@ if(isset($_POST['tombolcari'])){
   <body>
     <?php include("../sidebar.php");?>
     <div class="container">
+    <h1 class="judul">Daftar History</h1>
         <div class="searchAndRule">
         <button id="history_btn"><a href="Export.php" style="color:white;"><i style="margin-right:5px"class="fa fa-download"></i>Export</a></button>
             <div class="search_rule" style="float:right">

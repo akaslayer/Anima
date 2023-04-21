@@ -29,6 +29,7 @@ if(isset($_POST['tombolcari'])){
   <body>
     <?php include("../sidebar.php");?>
     <div class="container">
+    <h1 class="judul">Daftar Penyakit</h1>
         <div class="searchAndRule">
         <button id="rule_btn"><a href="AddPenyakit.php"  style="text-decoration: none;color:white;">Tambah Penyakit<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">

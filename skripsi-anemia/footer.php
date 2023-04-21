@@ -9,6 +9,7 @@
     <link href="assets/css/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
+<?php  $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1); ?>
 <body>
 <!-- <footer class="bg-dark">
     <div class="footer-content bg-dark">
@@ -30,9 +31,9 @@
     <div class="footer-left">
         <h3>Anima<span></span></h3>
         <p class ="footer-links">
-            <a href="index.php">Home</a> |
-            <a href="pengetahuan.php">Pengetahuan</a> |
-            <a href="login.php">Login</a>
+            <a href="index.php" class="<?= $page == 'index.php' ? 'activate':'' ?>">Home</a> |
+            <a href="pengetahuan.php" class="<?= $page == 'pengetahuan.php' ? 'activate':'' ?>">Pengetahuan</a> |
+            <a href="login.php" class="<?= $page == 'login.php' ? 'activate':'' ?>">Login</a>
         </p>
         <p class="footer-app-name">Copyright © 2023 <strong>Anima</strong> di desain oleh <span>Hendry Tjahaja Surijanto Putra</span> </p>
     </div>

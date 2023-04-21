@@ -44,7 +44,7 @@ if(!isset($_SESSION['nama'])){
       <th scope="col" style="width:20%">Tingkat Keyakinan</th>
     </tr>
   </thead>
-  <tbody class="pilihkondisi">
+  <tbody class="pilihTingkat">
   <?php
   $sql = mysqli_query($con, "Select * from tbl_gejala order by id_gejala");
   $i = 0;
@@ -52,7 +52,7 @@ if(!isset($_SESSION['nama'])){
     $i++;
     echo "<tr><td class=no>$i</td>";
     echo "<td class=gejala>$r[nama_gejala]</td>";
-    echo '<td class="opsi"><select name="kondisi[]" id="sl' . $i . '" class="opsikondisi"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';?>
+    echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';?>
       <option id="1" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
       <option id="2" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 2; ?>">Yakin</option>
       <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
@@ -64,16 +64,16 @@ if(!isset($_SESSION['nama'])){
       ?>
       <script type="text/javascript">
           $(document).ready(function () {
-            var arcolor = new Array('black', 'red', 'blue', 'green', 'purple', 'brown','pink');
+            var arrColor = new Array('black', 'red', 'blue', 'green', 'purple', 'brown','pink');
             setColor();
-            $('.pilihkondisi').on('change', 'select#sl<?php echo $i;?>', function() {
+            $('.pilihTingkat').on('change', 'select#pl<?php echo $i;?>', function() {
               setColor();
             });
             function setColor()
             {
-              var selectedItem = $('select#sl<?php echo $i; ?> :selected');
-              var color = arcolor[selectedItem.attr("id")];
-              $('select#sl<?php echo $i; ?>.opsikondisi').css('color', color);
+              var selectedItem = $('select#pl<?php echo $i; ?> :selected');
+              var color = arrColor[selectedItem.attr("id")];
+              $('select#pl<?php echo $i; ?>.opsiTingkat').css('color', color);
             }
           });
         </script>
@@ -90,19 +90,19 @@ if(!isset($_SESSION['nama'])){
 <?php
 if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
-    $inptanggal = date('Y-m-d');
-    $arbobot = array('0', '1', '0.8', '0.6', '0.4','0.2', '0');
+    $tanggalDiagnosa = date('Y-m-d');
+    $arrBobot = array('0', '1', '0.8', '0.6', '0.4','0.2', '0');
     // $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
-    $argejala = array();
+    $arrGejala = array();
 
-    for ($i = 0; $i < count($_POST['kondisi']); $i++) {
-      $arkondisi = explode("_", $_POST['kondisi'][$i]);
-      if (strlen($_POST['kondisi'][$i]) > 1) {
-        $argejala += array($arkondisi[0] => $arkondisi[1]);
+    for ($i = 0; $i < count($_POST['pilihan']); $i++) {
+      $arrPilihan = explode("_", $_POST['pilihan'][$i]);
+      if (strlen($_POST['pilihan'][$i]) > 1) {
+        $arrGejala += array($arrPilihan[0] => $arrPilihan[1]);
       }
     }
 
-    if(empty($argejala)){
+    if(empty($arrGejala)){
       echo '<script type="text/javascript">';
       echo 'swal({
                     title: "Error!",
@@ -116,12 +116,12 @@ if(isset($_POST['submit'])){
                 die();
                             
     }else{
-    $arkondisitext[1] = "Sangat Yakin";
-    $arkondisitext[2] = "Yakin";
-    $arkondisitext[3] = "Cukup Yakin";
-    $arkondisitext[4] = "Kurang Yakin";
-    $arkondisitext[5] = "Tidak Tahu";
-    $arkondisitext[6] = "Tidak";
+    $arrPilihanText[1] = "Sangat Yakin";
+    $arrPilihanText[2] = "Yakin";
+    $arrPilihanText[3] = "Cukup Yakin";
+    $arrPilihanText[4] = "Kurang Yakin";
+    $arrPilihanText[5] = "Tidak Tahu";
+    $arrPilihanText[6] = "Tidak";
     
 
     $sqlpkt = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
@@ -130,47 +130,33 @@ if(isset($_POST['submit'])){
       $arspkt[$rpkt['id_penyakit']] = $rpkt['srn_penyakit'];
     }
 
-    //print_r($arkondisitext);
 // -------- perhitungan certainty factor (CF) ---------
 // --------------------- START ------------------------
     $sqlpenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    $arpenyakit = array();
+    $arrPenyakit = array();
     while ($rpenyakit = mysqli_fetch_array($sqlpenyakit)) {
-      $cftotal_temp = 0;
       $cf = 0;
+      $cfGabungan = 0;
       $sqlgejala = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
-      $cflama = 0;
       while ($rgejala = mysqli_fetch_array($sqlgejala)) {
-        $arkondisi = explode("_", $_POST['kondisi'][0]);
-        $gejala = $arkondisi[0];
-
-        for ($i = 0; $i < count($_POST['kondisi']); $i++) {
-          $arkondisi = explode("_", $_POST['kondisi'][$i]);
-          $gejala = $arkondisi[0];
+        $arrPilihan = explode("_", $_POST['pilihan'][0]);
+        $gejala = $arrPilihan[0];
+        for ($i = 0; $i < count($_POST['pilihan']); $i++) {
+          $arrPilihan = explode("_", $_POST['pilihan'][$i]);
+          $gejala = $arrPilihan[0];
           if ($rgejala['id_gejala'] == $gejala) {
-            $cf = ($rgejala['mb'] - $rgejala['md']) * $arbobot[$arkondisi[1]];
-            if (($cf >= 0) && ($cf * $cflama >= 0)) {
-              $cflama = $cflama + ($cf * (1 - $cflama));
-            }
-            if ($cf * $cflama < 0) {
-              $cflama = ($cflama + $cf) / (1 - Math . Min(Math . abs($cflama), Math . abs($cf)));
-            }
-            if (($cf < 0) && ($cf * $cflama >= 0)) {
-              $cflama = $cflama + ($cf * (1 + $cflama));
-            }
+            $cf = ($rgejala['mb'] - $rgejala['md']) * $arrBobot[$arrPilihan[1]];
+            $cfGabungan = $cfGabungan + ($cf * (1 - $cfGabungan)); 
           }
         }
       }
-      if ($cflama > 0) {
-        $arpenyakit += array($rpenyakit['id_penyakit'] => number_format($cflama, 4));
+      if ($cfGabungan > 0) {
+        $arrPenyakit += array($rpenyakit['id_penyakit'] => number_format($cfGabungan, 4));
       }
     }
-
-    arsort($arpenyakit);
-
-
+    arsort($arrPenyakit);
     $np = 0;
-    foreach ($arpenyakit as $key => $value) {
+    foreach ($arrPenyakit as $key => $value) {
       $np++;
       $idpkt[$np] = $key;
       $nmpkt[$np] = $arpkt[$key];
@@ -184,8 +170,8 @@ if(isset($_POST['submit'])){
       $_SESSION["nama_penyakit"] = $nmpkt[1];
       $_SESSION["nilai_cf"] = $vlpkt[1];
       $_SESSION["srn_penyakit"] = $arspkt[$idpkt[1]];
-      $_SESSION["gejala"] = $argejala;
-      $_SESSION["pilihan_kondisi"] = $arkondisitext;
+      $_SESSION["gejala"] = $arrGejala;
+      $_SESSION["pilihan_kondisi"] = $arrPilihanText;
 
       if(empty( $_SESSION["nama_penyakit"]) ){
         $nmpkt[1] = "Tidak Anemia";
@@ -205,7 +191,7 @@ if(isset($_POST['submit'])){
       '$umur',
       '$jenis',
       '$domisili',
-      '$inptanggal',
+      '$tanggalDiagnosa',
       '$nmpkt[1]',
       '$vlpkt[1]'
       )");

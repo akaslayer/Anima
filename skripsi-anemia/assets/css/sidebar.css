@@ -28,7 +28,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 1rem;
-        background-color:#e3e3e6;
+        background-color:rgb(220, 215, 215);
         z-index: var(--z-fixed);
         transition: .5s
     }

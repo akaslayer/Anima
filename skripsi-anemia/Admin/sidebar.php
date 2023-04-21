@@ -19,11 +19,11 @@ if(!isset($_SESSION['username'])){
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="dropdown">
-            <button class="dropdown-toggle" type="button" style="background-color:#e3e3e6;border:none" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="dropdown-toggle" type="button" style="background-color: rgb(220, 215, 215);border:none" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <?php echo $_SESSION['username']; ?>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="./../../logout.php">Logout<i class='bx bx-arrow-from-left bx-flip-vertical  nav_logo-icon' style="float: right"></i></a></li>
+                <li><a class="dropdown-item" href="./../../logout.php">Logout<i class='bx bx-arrow-from-left bx-flip-vertical nav_logo-icon' style="float: right;color: black;"></i></a></li>
               </ul>
           </div>
         <!-- <div class="header_username"><h2><?php echo $_SESSION['username']; ?></h2></div>

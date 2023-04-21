@@ -28,6 +28,7 @@ if(isset($_POST['tombolcarigejala'])){
   <body>
   <?php include("../sidebar.php");?>
   <div class="container">
+  <h1 class="judul">Daftar Gejala</h1>
         <div class="searchAndRule">
         <button id="rule_btn"><a href="AddGejala.php"  style="text-decoration: none;color:white;">Tambah Gejala<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">

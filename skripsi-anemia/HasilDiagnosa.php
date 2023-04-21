@@ -124,7 +124,7 @@ if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
             echo "<td>0 % (0) </td>";
             
           }else{
-            echo "<td>" .round($_SESSION["nilai_cf"], 2) * 100 . " % (" . $_SESSION["nilai_cf"] . ")" ."</td>";
+            echo "<td>" .round($_SESSION["nilai_cf"], 4) * 100 . " % (" . $_SESSION["nilai_cf"] . ")" ."</td>";
           }
           ?> 
         </tr>
@@ -136,7 +136,7 @@ if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
             echo "<td> - </td>";
             
           }else{
-            echo "<td>" . $_SESSION["srn_penyakit"] ."</td>";
+            echo "<td style:'text-align:justify;'>" . $_SESSION["srn_penyakit"] ."</td>";
           }
           ?> 
         </tr>
