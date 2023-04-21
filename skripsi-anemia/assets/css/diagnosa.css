@@ -17,6 +17,9 @@ body{
     box-sizing: border-box;
 }
 
+.table th,.table td{
+    border-bottom: 1px solid rgb(212, 210, 210);
+}
 
 .btn-kondisi{
     position: sticky;
