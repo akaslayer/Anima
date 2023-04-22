@@ -83,7 +83,7 @@ if(isset($_POST['tombolcarigejala'])){
             $id=$row['id_gejala'];
             $name=$row['nama_gejala'];
             echo '<tr>
-                    <th scope="row">'.$nomor.'</th>
+                    <td scope="row" style="text-align: center;">'.$nomor.'</td>
                     <td>' .$name.'</td>
                     <td style="text-align: center;">
                     <button id="update"><a href="UpdateGejala.php?gejalaid='.$id.'" style="text-decoration: none"><i class="fa fa-edit"></i></a></button>
