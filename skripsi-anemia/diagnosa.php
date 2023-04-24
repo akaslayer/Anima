@@ -58,13 +58,13 @@ if(!isset($_SESSION['nama'])){
       <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
       <option id="4" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 4; ?>">Kurang Yakin</option>
       <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 5; ?>">Tidak Tahu</option>
-      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 6; ?>">Tidak</option>
+      <option id="6" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 6; ?>">Tidak</option>
       <?php
       echo '</select></td>';
       ?>
       <script type="text/javascript">
           $(document).ready(function () {
-            var arrColor = new Array('black', 'red', 'blue', 'green', 'purple', 'brown','pink');
+            var arrColor = new Array('black', 'green', 'blue', '#8B8000', 'purple', 'brown','red');
             setColor();
             $('.pilihTingkat').on('change', 'select#pl<?php echo $i;?>', function() {
               setColor();

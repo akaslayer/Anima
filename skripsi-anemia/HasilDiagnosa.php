@@ -136,7 +136,7 @@ if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
             echo "<td> - </td>";
             
           }else{
-            echo "<td style:'text-align:justify;'>" . $_SESSION["srn_penyakit"] ."</td>";
+            echo "<td style='text-align: justify;'>" . $_SESSION["srn_penyakit"] ."</td>";
           }
           ?> 
         </tr>

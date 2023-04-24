@@ -140,8 +140,7 @@ unset($_SESSION['pilihan_kondisi']);
                         bagian dari hemoglobin yang terpengaruh.</p>
 					<p>Cara mencegah thalasemia :</p>
                     <ol>
-                        <li>Melakukan pengecekan sebelum melakukan pernikahan untuk memastikan pasangan bukan carrier / pembawa penyakit</li>
-                        <li>Melakukan pemeriksaan premarital</li>
+                        <li>Melakukan pemeriksaan premarital sebelum melakukan pernikahan untuk memastikan pasangan bukan carrier / pembawa penyakit</li>
                     </ol>
 					
 				</li>
