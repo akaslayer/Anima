@@ -53,7 +53,7 @@
         left: -30%;
         width: var(--nav-width);
         height: 100vh;
-        background-color: var(--first-color);
+        background-color: #171616f8;
         padding: .5rem 1rem 0 0;
         transition: .5s;
         z-index: var(--z-fixed)}
@@ -63,7 +63,7 @@
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden;
-        background-color:#202122a9;
+        background-color:#1c1b1ba9;
     }
     .nav_logo, 
     .nav_link{
