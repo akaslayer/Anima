@@ -164,6 +164,7 @@ if(isset($_POST['submit'])){
       $valueCFPenyakit[$np] = $value;
     }
     
+    
 
       $nama = $_SESSION["nama"];
       $umur = $_SESSION["umur"];
@@ -173,7 +174,7 @@ if(isset($_POST['submit'])){
       $_SESSION["nilai_cf"] = $valueCFPenyakit[1];
       $_SESSION["srn_penyakit"] = $saranPenyakit[1];
       $_SESSION["gejala"] = $arrGejala;
-      $_SESSION["pilihan_kondisi"] = $arrPilihanText;
+      $_SESSION["pilihan_tingkat"] = $arrPilihanText;
 
       if(empty( $_SESSION["nama_penyakit"]) ){
         $namaPenyakit[1] = "Tidak Anemia";

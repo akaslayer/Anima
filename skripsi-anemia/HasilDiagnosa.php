@@ -75,21 +75,19 @@ if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
     <tbody>
     
     <?php
-    $ig = 0;
+    $nomor = 0;
     if(empty($_SESSION["gejala"] )){
       echo '<tr></tr>';
     }
     else{
     foreach ($_SESSION["gejala"] as $key => $value) {
-      $kondisi = $value;
-      $ig++;
-      $gejala = $key;
-      $sql4 = mysqli_query($con, "SELECT * FROM tbl_gejala where id_gejala = '$key'");
-      $r4 = mysqli_fetch_array($sql4);
-      echo '<tr><td>' . $ig . '</td>';
-      echo '<td>' . $r4['nama_gejala'] . '</td>';
-      // echo '<td><span style="color:' . $arcolor[$kondisi] . '">' . $arkondisitext[$kondisi] . '</span></td></tr>';
-      echo '<td><span>' . $_SESSION['pilihan_kondisi'][$kondisi]. '</span></td></tr>';
+      $pilihan = $value;
+      $nomor++;
+      $sqlGejala = mysqli_query($con, "SELECT * FROM tbl_gejala where id_gejala = '$key'");
+      $arrGejala = mysqli_fetch_array($sqlGejala);
+      echo '<tr><td>' . $nomor . '</td>';
+      echo '<td>' . $arrGejala['nama_gejala'] . '</td>';
+      echo '<td><span>' . $_SESSION['pilihan_tingkat'][$pilihan]. '</span></td></tr>';
       }
     }
     ?>
