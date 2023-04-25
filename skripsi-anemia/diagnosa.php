@@ -48,17 +48,17 @@ if(!isset($_SESSION['nama'])){
   <?php
   $sql = mysqli_query($con, "Select * from tbl_gejala order by id_gejala");
   $i = 0;
-  while($r = mysqli_fetch_array($sql)){
+  while($arr = mysqli_fetch_array($sql)){
     $i++;
     echo "<tr><td class=no>$i</td>";
-    echo "<td class=gejala>$r[nama_gejala]</td>";
+    echo "<td class=gejala>$arr[nama_gejala]</td>";
     echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';?>
-      <option id="1" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
-      <option id="2" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 2; ?>">Yakin</option>
-      <option id="3" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
-      <option id="4" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 4; ?>">Kurang Yakin</option>
-      <option id="5" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 5; ?>">Tidak Tahu</option>
-      <option id="6" style="color:black" value="<?php echo $r['id_gejala'] . '_' . 6; ?>">Tidak</option>
+      <option id="1" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
+      <option id="2" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 2; ?>">Yakin</option>
+      <option id="3" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
+      <option id="4" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 4; ?>">Kurang Yakin</option>
+      <option id="5" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 5; ?>">Tidak Tahu</option>
+      <option id="6" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 6; ?>">Tidak</option>
       <?php
       echo '</select></td>';
       ?>
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
       }
     }
 
-    if(empty($arrGejala)){
+    if(count($arrGejala) < 1){
       echo '<script type="text/javascript">';
       echo 'swal({
                     title: "Error!",
@@ -124,23 +124,14 @@ if(isset($_POST['submit'])){
     $arrPilihanText[6] = "Tidak";
     
 
-    $sqlpkt = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    while ($rpkt = mysqli_fetch_array($sqlpkt)) {
-      $arpkt[$rpkt['id_penyakit']] = $rpkt['nama_penyakit'];
-      $arspkt[$rpkt['id_penyakit']] = $rpkt['srn_penyakit'];
-    }
-
-// -------- perhitungan certainty factor (CF) ---------
-// --------------------- START ------------------------
-    $sqlpenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
+//  perhitungan certainty factor (CF)
+    $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
     $arrPenyakit = array();
-    while ($rpenyakit = mysqli_fetch_array($sqlpenyakit)) {
+    while ($rpenyakit = mysqli_fetch_array($sqlPenyakit)) {
       $cf = 0;
       $cfGabungan = 0;
-      $sqlgejala = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
-      while ($rgejala = mysqli_fetch_array($sqlgejala)) {
-        $arrPilihan = explode("_", $_POST['pilihan'][0]);
-        $gejala = $arrPilihan[0];
+      $sqlRule = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
+      while ($rgejala = mysqli_fetch_array($sqlRule)) {
         for ($i = 0; $i < count($_POST['pilihan']); $i++) {
           $arrPilihan = explode("_", $_POST['pilihan'][$i]);
           $gejala = $arrPilihan[0];
@@ -155,26 +146,37 @@ if(isset($_POST['submit'])){
       }
     }
     arsort($arrPenyakit);
+
+
+    $sqlPenyakit2 = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
+    while ($rpenyakit = mysqli_fetch_array($sqlPenyakit2)) {
+      $arrNamaPenyakit[$rpenyakit['id_penyakit']] = $rpenyakit['nama_penyakit'];
+      $arrSaranPenyakit[$rpenyakit['id_penyakit']] = $rpenyakit['srn_penyakit'];
+    }
+
+    
     $np = 0;
     foreach ($arrPenyakit as $key => $value) {
       $np++;
-      $idpkt[$np] = $key;
-      $nmpkt[$np] = $arpkt[$key];
-      $vlpkt[$np] = $value;
+      $idPenyakit[$np] = $key;
+      $namaPenyakit[$np] = $arrNamaPenyakit[$key];
+      $saranPenyakit[$np] = $arrSaranPenyakit[$key];
+      $valueCFPenyakit[$np] = $value;
     }
+    
 
       $nama = $_SESSION["nama"];
       $umur = $_SESSION["umur"];
       $jenis = $_SESSION["jenis"];
       $domisili = $_SESSION["domisli"];
-      $_SESSION["nama_penyakit"] = $nmpkt[1];
-      $_SESSION["nilai_cf"] = $vlpkt[1];
-      $_SESSION["srn_penyakit"] = $arspkt[$idpkt[1]];
+      $_SESSION["nama_penyakit"] = $namaPenyakit[1];
+      $_SESSION["nilai_cf"] = $valueCFPenyakit[1];
+      $_SESSION["srn_penyakit"] = $saranPenyakit[1];
       $_SESSION["gejala"] = $arrGejala;
       $_SESSION["pilihan_kondisi"] = $arrPilihanText;
 
       if(empty( $_SESSION["nama_penyakit"]) ){
-        $nmpkt[1] = "Tidak Anemia";
+        $namaPenyakit[1] = "Tidak Anemia";
       }
 
       mysqli_query($con, "INSERT INTO tbl_history(
@@ -192,8 +194,8 @@ if(isset($_POST['submit'])){
       '$jenis',
       '$domisili',
       '$tanggalDiagnosa',
-      '$nmpkt[1]',
-      '$vlpkt[1]'
+      '$namaPenyakit[1]',
+      '$valueCFPenyakit[1]'
       )");
         // echo '<script type = "text/javascript">';
         // echo 'window.location.href = "HasilDiagnosa.php"';

@@ -9,10 +9,10 @@ function filterData(&$str){
 } 
  
 // Excel file name for download 
-$fileName = "history-data_" . date('Y-m-d') . ".xls"; 
+$fileName = "history-anemia-data_" . date('Y-m-d') . ".xls"; 
 
 
-$fields = array ('No', 'Tanggal', 'Nama', 'Gender', 'Umur', 'Domisili', 'Hasil' ,'CF');
+$fields = array ('No', 'Tanggal', 'Nama', 'Jenis Kelamin', 'Umur', 'Domisili', 'Hasil' ,'CF');
 $excelData = implode("\t", array_values($fields)) . "\n"; 
 $query = $con->query("Select * from tbl_history order by id_history asc");
 $no = 1;
