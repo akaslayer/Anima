@@ -22,7 +22,7 @@ if ((isset($_SESSION['carigejala'])) || (isset($_SESSION['caripenyakit'])) || (i
   <?php include("../sidebar.php");?>
   <body>
   <div class="container-fluid px-4">
-    <h1 class="judul">Dashboard</h1>
+    <h1 class="judul">Anima</h1>
     <div class="row">
         <div class="col-xs-6 col-md-4">
             <div class="card bg-primary text-white mb-4">

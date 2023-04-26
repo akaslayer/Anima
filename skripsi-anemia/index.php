@@ -23,7 +23,7 @@ unset($_SESSION['pilihan_kondisi']);
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 	<link href="assets/css/index.css" rel="stylesheet">
-	<title>AMIA</title>
+	<title>Anima</title>
 </head>
 <body>
 <?php include 'Navbar.php'; ?>
