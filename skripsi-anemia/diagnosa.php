@@ -141,9 +141,7 @@ if(isset($_POST['submit'])){
           }
         }
       }
-      if ($cfGabungan > 0) {
         $arrPenyakit += array($rpenyakit['id_penyakit'] => number_format($cfGabungan, 4));
-      }
     }
     arsort($arrPenyakit);
 
