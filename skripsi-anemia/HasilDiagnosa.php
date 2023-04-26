@@ -5,7 +5,7 @@ session_start();
 //   header("Location: diagnosa.php");
 //   die();
 // }
-if(!isset($_SESSION['nama']) && !isset($_SESSION['nama_penyakit'])){
+if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_SESSION["gejala"])){
   header('location:diagnosa.php');
 }
 
