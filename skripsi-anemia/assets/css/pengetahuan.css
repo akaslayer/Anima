@@ -6,8 +6,6 @@ body{
 .container{
   display: flex;
   border-radius: 10px;
-
-
 }
 
 *{
@@ -16,7 +14,7 @@ body{
 }
 
 .section-title{
-  margin-left: 20px;
+
   margin-top: 60px;
   text-align: justify;
 }
@@ -61,6 +59,7 @@ body{
 }
 .content {
 	padding: 1.5rem 2rem;
+	margin-right: -30px;
 }
 .content li {
 	display: none;
@@ -85,6 +84,13 @@ body{
 	margin-bottom: .5rem;
 	color: var(--dark-grey);
 	font-size: .875rem;
+}
+
+.main-width{
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 @media screen and (max-width: 576px) {

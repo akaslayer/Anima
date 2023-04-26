@@ -13,7 +13,7 @@
 <div class="main-width">
   <header>
 <div class="logo">
-  <h2>Anima</h2>
+  <a href="index.php">Anima</a>
 </div>
 <nav>
   <div class="hamb">

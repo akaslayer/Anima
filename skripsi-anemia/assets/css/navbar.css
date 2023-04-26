@@ -43,7 +43,7 @@ body{
     background: black;
 }
 
-#navbar.sticky .logo h2 , #navbar.sticky nav .nav-list li.button a, #navbar.sticky nav .nav-list li a {
+#navbar.sticky .logo a , #navbar.sticky nav .nav-list li.button a, #navbar.sticky nav .nav-list li a {
     color: white;
 }
 
@@ -64,7 +64,7 @@ header{
 
 }
 
-.logo h2{
+.logo a{
     background: transparent;
     color: black;
     display: inline-flex;
@@ -74,6 +74,7 @@ header{
     cursor: pointer;
     font-weight: 700;
     font-family:'Poppins', sans-serif;
+    text-decoration: none;
 }
 
 nav .hamb{
@@ -207,7 +208,7 @@ nav .nav-list li.button:hover a{
     nav .nav-list.open{
         right: 0;
     }
-    #navbar.sticky .logo h2 , #navbar.sticky nav .nav-list li.button a, #navbar.sticky nav .nav-list li a {
+    #navbar.sticky .logo a , #navbar.sticky nav .nav-list li.button a, #navbar.sticky nav .nav-list li a {
         color: white;
     }
     nav .nav-list li.button a, nav .nav-list li a {

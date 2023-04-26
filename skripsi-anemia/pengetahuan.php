@@ -24,6 +24,7 @@ unset($_SESSION['pilihan_kondisi']);
     </head>
 <body>
 <?php include 'Navbar.php'; ?>
+<div class="main-width">
 <div class="container">
     <div class="section-title mb-4">
         <h2>Penyakit Anemia</h2>
@@ -146,6 +147,7 @@ unset($_SESSION['pilihan_kondisi']);
 				</li>
 			</ul>
 		</div>
+</div>
 </div>
 
 <?php include 'footer.php'; ?>

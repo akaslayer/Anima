@@ -33,7 +33,7 @@ if(!isset($_SESSION['username'])){
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo">&nbsp&nbsp&nbsp<span class="nav_logo-name">ANIMA</span> </a>
+            <div> <a href="./../home/Dashboard.php" class="nav_logo"><span class="nav_logo-name">ANIMA</span> </a>
                 <div class="nav_list"> 
                         <a href="./../home/Dashboard.php" class="nav_link <?= $page == 'Dashboard.php' ? 'active':'' ?>"> <i class='bx bx-home nav_icon'></i><span class="nav_name">Dashboard</span> </a> 
                         <a href="./../penyakit/DisplayPenyakit.php" class="nav_link <?= $page == 'DisplayPenyakit.php' || $page == 'AddPenyakit.php' || $page == 'UpdatePenyakit.php' ? 'active':'' ?>"> <i class='bx bx-injection nav_icon'></i> <span class="nav_name">Penyakit</span> </a> 
