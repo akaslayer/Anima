@@ -130,7 +130,7 @@ nav .nav-list li:not(:last-child) a:hover{
 
 
 nav .nav-list li.button a{
-    display: inline-block;
+    display: block;
     background: transparent;
     border: 2px solid #13a2b7;
     padding: 9px 28px;
@@ -175,7 +175,7 @@ nav .nav-list li.button:hover a{
     nav .nav-list{
         position: absolute;
         top: 70px;
-        right: -65%;
+        right: 0;
         bottom: 0;
         width: 40%;
         height: 200px;
@@ -184,6 +184,7 @@ nav .nav-list li.button:hover a{
         padding: 6% 9%;
         transition: .3s right;
         border-radius: 10px;
+        display: none;
     }
     nav .nav-list li{
         display: block;
@@ -191,7 +192,7 @@ nav .nav-list li.button:hover a{
     nav .nav-list li a {
         display: block;
         text-align: center;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 400;
         margin-left: 0;
         margin-bottom: 30px;
@@ -207,6 +208,7 @@ nav .nav-list li.button:hover a{
     }
     nav .nav-list.open{
         right: 0;
+        display: block;
     }
     #navbar.sticky .logo a , #navbar.sticky nav .nav-list li.button a, #navbar.sticky nav .nav-list li a {
         color: white;
