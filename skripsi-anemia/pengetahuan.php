@@ -72,7 +72,7 @@ unset($_SESSION['pilihan_kondisi']);
 				<li data-target="#aplastik">Anemia Aplastik</li>
 				<li data-target="#hemolitik">Anemia Hemolitik</li>
 				<li data-target="#sabit">Anemia Sel Sabit</li>
-        <li data-target="#thalassemia">Thalasemia</li>
+        <li data-target="#thalassemia">Thalassemia</li>
 			</ul>
 			<ul class="content">
 				<li class="active" id="besi">
@@ -131,16 +131,16 @@ unset($_SESSION['pilihan_kondisi']);
 					<p>Anemia sel sabit tidak dapat dicegah.</p>
 				</li>
         <li id="thalassemia">
-					<h1>Thalasemia</h1>
-					<p style="text-align: justify;">Thalasemia merupakan penyakit yang mana disebabkan oleh kelainan darah
+					<h1>Thalassemia</h1>
+					<p style="text-align: justify;">Thalassemia merupakan penyakit yang mana disebabkan oleh kelainan darah
                         akibat kelainan genetik yang membuat hemoglobin dalam darah tidak diproduksi
                         dengan jumlah yang cukup dan tidak dapat berfungsi dengan baik. Jenis
-                        anemia ini bersifat genetik atau diturunkan. Thalasemia terbagi menjadi dua jenis, yaitu thalasemia alfa dan thalasemia beta. Tingkat keparahan dari thalasemia
+                        anemia ini bersifat genetik atau diturunkan. Thalassemia terbagi menjadi dua jenis, yaitu thalassemia alfa dan thalassemia beta. Tingkat keparahan dari thalassemia
                         alfa bergantung pada jumlah mutasi gen yang diwarisi dari orang tua, sehingga
                         kondisi akan semakin parah tergantung banyaknya gen yang bermutasi. Berbeda
-                        dari thalasemia alfa, tingkat keparahan dari thalaemia beta bergantung pada
+                        dari thalassemia alfa, tingkat keparahan dari thalaemia beta bergantung pada
                         bagian dari hemoglobin yang terpengaruh.</p>
-					<p>Cara mencegah thalasemia :</p>
+					<p>Cara mencegah thalassemia :</p>
                     <ol>
                         <li>Melakukan pemeriksaan premarital sebelum melakukan pernikahan untuk memastikan pasangan bukan carrier / pembawa penyakit</li>
                     </ol>
