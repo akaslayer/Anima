@@ -192,17 +192,18 @@ nav .nav-list li.button:hover a{
     nav .nav-list li a {
         display: block;
         text-align: center;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 400;
         margin-left: 0;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
     nav .nav-list li.button a{
         position: absolute;
         bottom: 0%;
         right: 30%;
+        font-weight: 400;
         left: 30%;
-        padding: 7px 15px;
+        padding: 5px 12px;
         font-size: 14px;
 
     }

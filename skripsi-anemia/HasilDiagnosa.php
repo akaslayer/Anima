@@ -142,23 +142,27 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
 </table>
   </div>
     </div>
-    <div class="btn-print">
-        <button class="btn btn-sucess print" onclick="printDiv('printableArea')" id="print-btn"><i class="fa-solid fa-print"></i>Cetak</button>
+    <div class="hide">
+      <div class="btn-print">
+          <button class="btn btn-sucess print" onclick="printDiv('printableArea')" id="print-btn"><i class="fa-solid fa-print"></i>Cetak</button>
+      </div>
     </div>
-    <hr size="2" width="70%" color="black" style="margin-top:120px;margin-bottom:0px;margin-left:auto;margin-right:auto;" > 
-    <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih tombol berikut jika ingin melakukan diagnosa ulang atau menyelesaikan diagnosa penyakit anemia</p>
-    <div class="btn-hasil">
-      
-        <a href="diagnosa.php"><input class="btn retry" type="button" value="Diagnosa Lagi"/></a>
-        <a href="index.php"><input class="btn selesai"  type="button" value="Selesai"/></a>
+    <div class="hide">
+      <hr size="2" width="70%" color="black" style="margin-top:120px;margin-bottom:0px;margin-left:auto;margin-right:auto;" > 
+      <p style="text-align: center;font-size: 14px;margin-top: 10px;">Pilih tombol berikut jika ingin melakukan diagnosa ulang atau menyelesaikan diagnosa penyakit anemia</p>
+        <div class="btn-hasil">
+          <a href="diagnosa.php"><input class="btn retry" type="button" value="Diagnosa Lagi"/></a>
+          <a href="index.php"><input class="btn selesai"  type="button" value="Selesai"/></a>
+        </div>
     </div>
     </div>
 
     
   
     
-    
+    <div class="hide">
     <?php include 'footer.php'; ?>
+    </div>
     <script>
       function printDiv(divName) 
       {

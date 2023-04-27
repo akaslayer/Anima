@@ -115,9 +115,59 @@ body{
     font-size: 16px;
     font-weight:500;
 }
+@media screen and (max-width:768px) {
+    .saranPenyakit th{
+        font-size: 16px;
+    }
+    
+    .jenisPenyakit td h5{
+        font-size: 16px;
+    }
+    
+    .jenisPenyakit th{
+        font-size: 16px;
+    }
+    
+    .pilihanGejala td{
+        font-size: 14px;
+    }
+    .dataPasien table th{
+        font-size: 16px;
+    }
+    .dataPasien table td{
+        font-size: 14px;
+    }
+    .print{
+        padding: 5px 20px 5px 20px;
+        font-size: 16px;
+    }
+    .print i{
+        font-size: 18px;
+    }
+}
+
 
 
 
 @page{
     size: A4;
+}
+@media print{
+    .dataPasien table{
+        border: 1px solid #090909;
+    }
+    .pilihanGejala table{
+        border: 1px solid #090909;
+    }
+    .hide, #navbar{
+        display: none;
+        visibility:none;
+    }
+}
+
+@media print and (max-width: 600px){
+    .hide, #navbar{
+        display: none;
+        visibility:none;
+    }
 }
