@@ -174,10 +174,10 @@ nav .nav-list li.button:hover a{
     }
     nav .nav-list{
         position: absolute;
-        top: 70px;
+        top: 65px;
         right: 0;
         bottom: 0;
-        width: 40%;
+        width: 230px;
         height: 200px;
         background: white;
         z-index: 2;
@@ -219,4 +219,17 @@ nav .nav-list li.button:hover a{
     }
 
     
+}
+
+@media screen and (max-width:400px) {
+    nav .nav-list li a {
+        margin-bottom: 34px;
+        font-size: 14px;
+    }
+    nav .nav-list li.button a{
+    
+        padding: 4px 10px;
+        font-size: 14px;
+
+    }
 }

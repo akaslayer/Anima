@@ -100,4 +100,8 @@ body{
 	.indicator {
 		border-right: none;
 	}
+	.content {
+		padding: 1.5rem 0rem;
+		margin-right: 0px;
+	}
 }
