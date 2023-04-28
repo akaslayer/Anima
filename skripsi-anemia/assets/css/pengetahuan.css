@@ -104,4 +104,10 @@ body{
 		padding: 1.5rem 0rem;
 		margin-right: 0px;
 	}
+	.section-title p{
+		font-size: 0.9rem;
+	}
+	.section-title ol li{
+		font-size: 0.9rem;
+	}
 }
