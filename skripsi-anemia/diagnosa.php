@@ -125,8 +125,8 @@ if(isset($_POST['submit'])){
     
 
 //  perhitungan certainty factor (CF)
-    $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
     $arrPenyakit = array();
+    $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
     while ($rpenyakit = mysqli_fetch_array($sqlPenyakit)) {
       $cf = 0;
       $cfGabungan = 0;
