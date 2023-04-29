@@ -32,7 +32,7 @@ if(!isset($_SESSION['nama'])){
 <div class="title-section">
   <h2>Diagnosa Penyakit Anemia</h2>
   <hr size="2" width="65%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
-    <p class="note">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil</p>
+    <p class="note">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil diagnosa</p>
 </div>
 <div class="container mt-5">
 <form name=text_form method="POST" action ="diagnosa.php">
@@ -126,30 +126,29 @@ if(isset($_POST['submit'])){
 
 //  perhitungan certainty factor (CF)
     $arrPenyakit = array();
-    $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    while ($rpenyakit = mysqli_fetch_array($sqlPenyakit)) {
+    $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit");
+    while ($rowPenyakit = mysqli_fetch_array($sqlPenyakit)) {
       $cf = 0;
       $cfGabungan = 0;
-      $sqlRule = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rpenyakit[id_penyakit]");
-      while ($rgejala = mysqli_fetch_array($sqlRule)) {
+      $sqlRule = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rowPenyakit[id_penyakit]");
+      while ($rowGejala = mysqli_fetch_array($sqlRule)) {
         for ($i = 0; $i < count($_POST['pilihan']); $i++) {
           $arrPilihan = explode("_", $_POST['pilihan'][$i]);
-          $gejala = $arrPilihan[0];
-          if ($rgejala['id_gejala'] == $gejala) {
-            $cf = ($rgejala['mb'] - $rgejala['md']) * $arrBobot[$arrPilihan[1]];
+          if ($rowGejala['id_gejala'] == $arrPilihan[0]) {
+            $cf = ($rowGejala['mb'] - $rowGejala['md']) * $arrBobot[$arrPilihan[1]];
             $cfGabungan = $cfGabungan + ($cf * (1 - $cfGabungan)); 
           }
         }
       }
-        $arrPenyakit += array($rpenyakit['id_penyakit'] => number_format($cfGabungan, 4));
+        $arrPenyakit += array($rowPenyakit['id_penyakit'] => number_format($cfGabungan, 4));
     }
     arsort($arrPenyakit);
 
 
     $sqlPenyakit2 = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");
-    while ($rpenyakit = mysqli_fetch_array($sqlPenyakit2)) {
-      $arrNamaPenyakit[$rpenyakit['id_penyakit']] = $rpenyakit['nama_penyakit'];
-      $arrSaranPenyakit[$rpenyakit['id_penyakit']] = $rpenyakit['srn_penyakit'];
+    while ($rowPenyakit = mysqli_fetch_array($sqlPenyakit2)) {
+      $arrNamaPenyakit[$rowPenyakit['id_penyakit']] = $rowPenyakit['nama_penyakit'];
+      $arrSaranPenyakit[$rowPenyakit['id_penyakit']] = $rowPenyakit['srn_penyakit'];
     }
 
     
