@@ -107,7 +107,7 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
         <td width="15%">Nama Penyakit</td>
           <td width="3%" >:</td>
           <?php 
-          if(empty( $_SESSION["nama_penyakit"]) ){
+          if($_SESSION["nilai_cf"] == 0){
             echo "<td>Kamu tidak menderita penyakit anemia </td>";
           }else{
             echo "<td>". $_SESSION["nama_penyakit"] . "</td>";
@@ -118,7 +118,7 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
           <td width="20%">Presentase</td>
           <td width="3%" >:</td>
           <?php 
-          if(empty( $_SESSION["nilai_cf"]) ){
+          if($_SESSION["nilai_cf"] == 0){
             echo "<td>0 % (0) </td>";
             
           }else{
@@ -130,7 +130,7 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
           <td width="15%">Disarankan</td>
           <td width="3%">:</td>
           <?php 
-          if(empty( $_SESSION["srn_penyakit"]) ){
+          if($_SESSION["nilai_cf"] == 0){
             echo "<td> - </td>";
             
           }else{

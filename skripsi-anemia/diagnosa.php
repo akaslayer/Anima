@@ -174,7 +174,7 @@ if(isset($_POST['submit'])){
       $_SESSION["gejala"] = $arrGejala;
       $_SESSION["pilihan_tingkat"] = $arrPilihanText;
 
-      if(empty( $_SESSION["nama_penyakit"]) ){
+      if($valueCFPenyakit[1] == 0){
         $namaPenyakit[1] = "Tidak Anemia";
       }
 
