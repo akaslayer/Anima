@@ -52,7 +52,7 @@ if(!isset($_SESSION['nama'])){
     $i++;
     echo "<tr><td class=no>$i</td>";
     echo "<td class=gejala>$arr[nama_gejala]</td>";
-    echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/><option id="0" value="0" style="color:black">Pilih jika sesuai</option>';?>
+    echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/><option id="0" value="0" style="color:black">Pilih yang sesuai</option>';?>
       <option id="1" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
       <option id="2" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 2; ?>">Yakin</option>
       <option id="3" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
@@ -124,18 +124,18 @@ if(isset($_POST['submit'])){
     $arrPilihanText[6] = "Tidak";
     
 
-//  perhitungan certainty factor (CF)
+//  Implementasi certainty factor (CF)
     $arrPenyakit = array();
     $sqlPenyakit = mysqli_query($con, "SELECT * FROM tbl_penyakit");
     while ($rowPenyakit = mysqli_fetch_array($sqlPenyakit)) {
       $cf = 0;
       $cfGabungan = 0;
       $sqlRule = mysqli_query($con, "SELECT * FROM tbl_rule where id_penyakit=$rowPenyakit[id_penyakit]");
-      while ($rowGejala = mysqli_fetch_array($sqlRule)) {
+      while ($rowRule = mysqli_fetch_array($sqlRule)) {
         for ($i = 0; $i < count($_POST['pilihan']); $i++) {
           $arrPilihan = explode("_", $_POST['pilihan'][$i]);
-          if ($rowGejala['id_gejala'] == $arrPilihan[0]) {
-            $cf = ($rowGejala['mb'] - $rowGejala['md']) * $arrBobot[$arrPilihan[1]];
+          if ($rowRule['id_gejala'] == $arrPilihan[0]) {
+            $cf = ($rowRule['mb'] - $rowRule['md']) * $arrBobot[$arrPilihan[1]];
             $cfGabungan = $cfGabungan + ($cf * (1 - $cfGabungan)); 
           }
         }

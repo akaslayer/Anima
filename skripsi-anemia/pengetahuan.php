@@ -100,9 +100,9 @@ unset($_SESSION['pilihan_kondisi']);
                         oleh kegagalan sumsum tulang untuk menghasilkan sel darah. Pada kondisi
                         ini, salah satu atau seluruh sel darah, termasuk sel darah merah, sel darah putih,
                         dan trombosit tidak dapat diproduksi oleh sumsum tulang. Anemia aplastik terbagi
-                        menjadi dua jenis, yaitu anemia aplastik yang didapat (Acquired aplastic anemia)
+                        menjadi dua jenis, yaitu anemia aplastik yang didapat (acquired aplastic anemia)
                         dan anemia aplastik yang diturunkan (inherited aplastic anemia). </p>
-					<p style="text-align: justify;">Anemia aplastik yang didapat (Acquired aplastic anemia) biasanya 
+					<p style="text-align: justify;">Anemia aplastik yang didapat (acquired aplastic anemia) biasanya 
                         disebabkan oleh penyakit autoimun. Penyakit autoimun adalah penyakit yang
                         terjadi akibat sistem kekebalan tubuh atau sistem imun menyerang sel-sel sehat
                         dalam tubuh sendiri, yang di dalam hal ini adalah sumsum tulang belakang.
