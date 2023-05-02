@@ -52,7 +52,8 @@ if(!isset($_SESSION['nama'])){
     $i++;
     echo "<tr><td class=no>$i</td>";
     echo "<td class=gejala>$arr[nama_gejala]</td>";
-    echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/><option id="0" value="0" style="color:black">Pilih yang sesuai</option>';?>
+    echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/>'; ?>
+      <option id="0" style="color:black" value="0" >Pilih yang sesuai</option>
       <option id="1" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
       <option id="2" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 2; ?>">Yakin</option>
       <option id="3" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
@@ -177,7 +178,7 @@ if(isset($_POST['submit'])){
         $namaPenyakit[1] = "Tidak Anemia";
       }
 
-      mysqli_query($con, "INSERT INTO tbl_history(
+      mysqli_query($con, "insert into tbl_history(
         nama_user,
         umur,
         jenis_kelamin,
@@ -186,7 +187,7 @@ if(isset($_POST['submit'])){
         hasil_diagnosa,
         nilai_cf
       ) 
-      VALUES(
+      values(
       '$nama',
       '$umur',
       '$jenis',
