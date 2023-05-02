@@ -87,7 +87,7 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
       $arrGejala = mysqli_fetch_array($sqlGejala);
       echo '<tr><td>' . $nomor . '</td>';
       echo '<td>' . $arrGejala['nama_gejala'] . '</td>';
-      echo '<td><span>' . $_SESSION['pilihan_tingkat'][$pilihan]. '</span></td></tr>';
+      echo '<td>' . $_SESSION['pilihan_tingkat'][$pilihan]. '</td></tr>';
       }
     }
     ?>
