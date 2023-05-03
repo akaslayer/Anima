@@ -35,7 +35,7 @@ unset($_SESSION['pilihan_kondisi']);
                 </div>
                 <div class="mb-2 mt-4">
                 <label>Usia Pasien</label>
-                    <input type = "number"  name ="umur"  required>
+                    <input type = "number"  name ="umur"  min="1" max="120" required>
                 </div>
                 <div class="mb-2 mt-4">
                 <label>Jenis Kelamin</label>
