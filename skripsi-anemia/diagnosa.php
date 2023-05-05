@@ -153,13 +153,12 @@ if(isset($_POST['submit'])){
     }
 
     
-    $np = 0;
+    $k = 1;
     foreach ($arrPenyakit as $key => $value) {
-      $np++;
-      $idPenyakit[$np] = $key;
-      $namaPenyakit[$np] = $arrNamaPenyakit[$key];
-      $saranPenyakit[$np] = $arrSaranPenyakit[$key];
-      $valueCFPenyakit[$np] = $value;
+      $namaPenyakit[$k] = $arrNamaPenyakit[$key];
+      $saranPenyakit[$k] = $arrSaranPenyakit[$key];
+      $valueCFPenyakit[$k] = $value;
+      $k++;
     }
     
     
