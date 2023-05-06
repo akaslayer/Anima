@@ -53,7 +53,7 @@ if(!isset($_SESSION['nama'])){
     echo "<tr><td class=no>$i</td>";
     echo "<td class=gejala>$arr[nama_gejala]</td>";
     echo '<td class="opsi"><select name="pilihan[]" id="pl' . $i . '" class="opsiTingkat"/>'; ?>
-      <option id="0" style="color:black" value="0" >Pilih yang sesuai</option>
+      <option id="0" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 0; ?>" >Pilih yang sesuai</option>
       <option id="1" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 1; ?>">Sangat Yakin</option>
       <option id="2" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 2; ?>">Yakin</option>
       <option id="3" style="color:black" value="<?php echo $arr['id_gejala'] . '_' . 3; ?>">Cukup Yakin</option>
@@ -93,15 +93,15 @@ if(isset($_POST['submit'])){
     date_default_timezone_set("Asia/Jakarta");
     $tanggalDiagnosa = date('Y-m-d');
     $arrBobot = array('0', '1', '0.8', '0.6', '0.4','0.2', '0');
-    // $arcolor = array('black', 'red', 'blue', 'green', 'purple', 'brown');
     $arrGejala = array();
 
     for ($i = 0; $i < count($_POST['pilihan']); $i++) {
       $arrPilihan = explode("_", $_POST['pilihan'][$i]);
-      if (strlen($_POST['pilihan'][$i]) > 1) {
+      if ($arrPilihan[1] != 0) {
         $arrGejala += array($arrPilihan[0] => $arrPilihan[1]);
       }
     }
+    ksort($arrGejala);
 
     if(count($arrGejala) < 1){
       echo '<script type="text/javascript">';
@@ -143,7 +143,7 @@ if(isset($_POST['submit'])){
       }
         $arrPenyakit += array($rowPenyakit['id_penyakit'] => number_format($cfGabungan, 4));
     }
-    arsort($arrPenyakit);
+  arsort($arrPenyakit);
 
 
     $sqlPenyakit2 = mysqli_query($con, "SELECT * FROM tbl_penyakit order by id_penyakit");

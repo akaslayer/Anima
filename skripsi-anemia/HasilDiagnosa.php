@@ -81,13 +81,12 @@ if(!isset($_SESSION['nama']) || !isset($_SESSION['nama_penyakit']) || !isset($_S
     }
     else{
     foreach ($_SESSION["gejala"] as $key => $value) {
-      $pilihan = $value;
       $nomor++;
       $sqlGejala = mysqli_query($con, "SELECT * FROM tbl_gejala where id_gejala = '$key'");
       $arrGejala = mysqli_fetch_array($sqlGejala);
       echo '<tr><td>' . $nomor . '</td>';
       echo '<td>' . $arrGejala['nama_gejala'] . '</td>';
-      echo '<td>' . $_SESSION['pilihan_tingkat'][$pilihan]. '</td></tr>';
+      echo '<td>' . $_SESSION['pilihan_tingkat'][$value]. '</td></tr>';
       }
     }
     ?>
