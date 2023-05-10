@@ -82,7 +82,7 @@ unset($_SESSION['pilihan_kondisi']);
     </div>
 </div>
     <div class="right">
-        <img src="assets/images/cure.png"/>
+        <img src="assets/images/cure2.png"/>
     </div>
 </div>
 <?php include 'footer.php'; ?>
