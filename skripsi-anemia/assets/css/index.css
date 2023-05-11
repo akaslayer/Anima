@@ -339,6 +339,7 @@ body{
 @media screen and (max-width: 768px) {
   .row .left .content{
     padding-left: 0px;
+    margin-top: 10px;
   }
  
 .section h1 {
@@ -357,11 +358,11 @@ body{
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 1px;
- 
     padding: 12px 20px;
   }
   .row .right{
     right: 0px;
+    top: 0px;
   }
 } 
 
