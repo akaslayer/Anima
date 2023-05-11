@@ -339,7 +339,6 @@ body{
 @media screen and (max-width: 768px) {
   .row .left .content{
     padding-left: 0px;
-    margin-top: 10px;
   }
  
 .section h1 {
