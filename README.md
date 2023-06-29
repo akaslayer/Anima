@@ -8,4 +8,4 @@ username : admin
 Pass admin : admin6cb
 
 # Link Hosting
-animaskripsi.000webhostapp.com
+https://animaskripsi.000webhostapp.com/
