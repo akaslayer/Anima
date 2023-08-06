@@ -85,6 +85,46 @@ unset($_SESSION['pilihan_kondisi']);
         <img src="assets/images/cure4.png"/>
     </div>
 </div>
+
+
+<div class="main-width">
+<div class="container">
+    <h2 class="pakar-title">About Us</h2>
+    <div class="row-card">
+        
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/dosen.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. Ir. Winarno, M.Kom.</h5>
+                    <p class="card-text">Dosen Pembimbing</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" id="hendry" src="assets/images/hendry.png">
+                <div class="card-body">
+                    <h5 class="card-title">Hendry Tjahaja Surijanto Putra</h5>
+                    <p class="card-text">Developer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/pakar.jfif">
+                <div class="card-body">
+                    <h5 class="card-title">dr. Merissa Arviana</h5>
+                    <p class="card-text">Dokter Umum (Pakar)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <?php include 'footer.php'; ?>
 </body>
 </html>

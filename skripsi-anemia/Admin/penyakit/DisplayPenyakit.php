@@ -31,7 +31,7 @@ if(isset($_POST['tombolcari'])){
     <div class="container">
     <h1 class="judul">Daftar Penyakit</h1>
         <div class="searchAndRule">
-        <button id="rule_btn"><a href="AddPenyakit.php"  style="text-decoration: none;color:white;">Tambah Penyakit<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
+        <button id="rule_btn"><a href="AddPenyakit.php"  style="text-decoration: none;color:white;">Tambah Jenis Penyakit Anemia<i class="fa fa-plus" style="margin-left:10px"></i></a></button>
             <div class="search_rule" style="float:right">
             <form method="POST" action="DisplayPenyakit.php">
                     <input type="text" name="caripenyakit" placeholder="Nama Penyakit" autofocus value="<?php echo $caripenyakit; ?>">

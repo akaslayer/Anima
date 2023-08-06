@@ -10,6 +10,32 @@ body{
 
 }
 
+.btn_panduan{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    float: left;
+    color: white;
+    background-color: #141eb4;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.btn_panduan:hover{
+    color: #3e45af;
+    transition: .4s;
+}
+
+.modal-body ol li{
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: justify;
+}
+
 
 
 *{
@@ -22,21 +48,31 @@ body{
 }
 
 .btn-kondisi{
-    position: sticky;
-    bottom: 60px;
-    left: 20px;
-    border-radius: 50px;
-    margin-left: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    margin-top: 10px;
     float: right;
-    height:60px;
-    width: 60px;
-    margin-right: 130px;
-    background-color: black;
+    color: white;
+    background-color: #141eb4;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
+.btn-kondisi:hover{
+    background-color:  #3e45af;
+    transition: .4s;
+}
+
 .btn-kondisi i{
  font-size: 20px;
  color: white;
 }
+
+
+
 .title-section{
     text-align: center;
     margin-top: 50px;

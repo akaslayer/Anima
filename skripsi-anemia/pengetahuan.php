@@ -29,7 +29,7 @@ unset($_SESSION['pilihan_kondisi']);
 <div class="container">
     <div class="section-title mb-4">
         <h2>Penyakit Anemia</h2>
-        <p>Anemia adalah suatu kondisi di mana jumlah sel darah merah atau konsentrasi hemoglobin di dalamnya lebih rendah dari biasanya. Sel darah merah berfungsi untuk menyediakan oksigen ke jaringan tubuh, sedangkan hemoglobin berfungsi untuk membawah oksigen yang telah disediakan oleh sel darah merah. Jika tubuh memiliki sel darah merah yang terlalu sedikit atau abnormal dan hemoglobin yang tidak cukup, akan terjadi penurunan kapasitas darah untuk membawa oksigen ke jaringan tubuh. Kondisi ini menyebabkan beberapa gejala seperti mudah merasa kelelahan, pusing, sesak napas, dll.</p>
+        <p>Anemia adalah suatu kondisi di mana jumlah sel darah merah atau konsentrasi hemoglobin di dalamnya lebih rendah dari biasanya. Sel darah merah memiliki fungsi untuk membawa oksigen dan hemoglobin dari paru-paru ke seluruh tubuh, sedangkan hemoglobin merupakan protein dalam sel darah merah yang bertugas untuk mengikat dan membawa oksigen ke seluruh tubuh. Jika tubuh memiliki sel darah merah yang terlalu sedikit atau abnormal dan hemoglobin yang tidak cukup, akan terjadi penurunan kapasitas darah untuk membawa oksigen ke jaringan tubuh. Kondisi ini menyebabkan beberapa gejala seperti mudah merasa kelelahan, pusing, sesak napas, dll.</p>
         <p>
             Faktor-faktor yang dapat menyebabkan anemia :
             </p>

@@ -82,6 +82,10 @@ label{
     padding: 0 20px 0 20px;
 }
 
+body{
+    background-color: rgba(202, 204, 206, 0.137) !important;
+}
+
 
 .main{
     display: flex;

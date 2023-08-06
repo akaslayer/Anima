@@ -304,6 +304,84 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+.card-title{
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.card-text{
+  text-align: center;
+  font-size: 14px;
+  color: rgb(106, 105, 105);
+  font-weight: 500;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit:cover;
+  overflow: hidden;
+}
+
+#hendry{
+
+object-position: top;
+
+}
+
+
+
+.card {
+  text-align: center;
+  margin: 0 auto; 
+  float: none; 
+  margin-bottom: 10px; 
+  background-color: white;
+  margin-top: 10px;
+  border: 1px solid gainsboro;
+  box-shadow: 4px 3px 10px 5px rgb(203, 203, 203);
+  margin-bottom:40px;
+  overflow: hidden;
+}
+
+.row-card{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+}
+
+/* .card-icons{
+  margin-top: 25px;
+}
+.card-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 30px;
+  font-size: 20px;
+  color: #ffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+} */
+
+.pakar-title{
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(26, 26, 26);
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+
 
 
 .row .left h2 {

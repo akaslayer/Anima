@@ -26,13 +26,45 @@ if(!isset($_SESSION['nama'])){
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-</head>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
 <body>
 <?php include 'Navbar.php';?>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Panduan Untuk Melakukan Diagnosa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="exitmodal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <ol>
+         <li>Silahkan mengisi setiap pilihan tingkat keyakinan dari gejala-gejala penyakit anemia yang ditampilkan di dalam website.</li>
+         <li>Terdapat beberapa pilihan tingkat keyakinan untuk setiap gejala-gejala penyakit anemia yang ditampilkan, mulai dari <b>Sangat Yakin</b> (Gejala sangat terasa dan terlihat dengan sangat jelas), <b>Yakin</b>, <b>Cukup Yakin</b>, <b>Kurang Yakin</b>, <b>Tidak Tahu</b>, dan <b>Tidak</b> (Tidak terasa dan tidak terlihat gejala sama sekali).</li>
+         <li>Tekan tombol <b>Submit</b> setelah mengisi setiap pilihan tingkat keyakinan dari gejala-gejala penyakit anemia tersebut.</li>
+         <li>Setelah menekan tombol <b>Submit</b>, sistem akan melakukan perhitungan dari pilihan tingkat keyakinan dari gejala-gejala penyakit anemia yang dirasakan dan menampilkan hasil diagnosa.</li>
+      </ol>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" id="closemodal" data-dismiss="modal">Saya Mengerti</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="title-section">
   <h2>Diagnosa Penyakit Anemia</h2>
   <hr size="2" width="65%" color="black" style="margin-bottom:10px;margin-left:auto;margin-right:auto;" > 
-    <p class="note">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit (<i class="fas fa-search"></i>) untuk melihat hasil diagnosa</p>
+    <p class="note">Pilih tingkat keyakinan anda terhadap gejala yang sedang dirasakan dan tekan tombol submit untuk melihat hasil diagnosa</p>
 </div>
 <div class="container mt-5">
 <form name=text_form method="POST" action ="diagnosa.php">
@@ -83,8 +115,10 @@ if(!isset($_SESSION['nama'])){
   }?> 
 </tbody>
 </table>
+
+<button type="submit" class="btn-kondisi" name="submit">Submit</button>
+
 </div>
-<button type="submit" class="btn-kondisi" name="submit"><i class="fas fa-search"></i></button>
 </form>
 </div>
 <?php include 'footer.php'; ?>
@@ -94,13 +128,16 @@ if(isset($_POST['submit'])){
     $tanggalDiagnosa = date('Y-m-d');
     $arrBobot = array('0', '1', '0.8', '0.6', '0.4','0.2', '0');
     $arrGejala = array();
-
+    $pilihan = $_POST['pilihan'];
+   
     for ($i = 0; $i < count($_POST['pilihan']); $i++) {
       $arrPilihan = explode("_", $_POST['pilihan'][$i]);
       if ($arrPilihan[1] != 0) {
         $arrGejala += array($arrPilihan[0] => $arrPilihan[1]);
       }
     }
+
+  
     ksort($arrGejala);
 
     if(count($arrGejala) < 1){
@@ -162,7 +199,6 @@ if(isset($_POST['submit'])){
     }
     
     
-
       $nama = $_SESSION["nama"];
       $umur = $_SESSION["umur"];
       $jenis = $_SESSION["jenis"];
@@ -172,29 +208,14 @@ if(isset($_POST['submit'])){
       $_SESSION["srn_penyakit"] = $saranPenyakit[1];
       $_SESSION["gejala"] = $arrGejala;
       $_SESSION["pilihan_tingkat"] = $arrPilihanText;
+      $_SESSION['pilihan'] = $pilihan;
 
       if($valueCFPenyakit[1] == 0){
         $namaPenyakit[1] = "Tidak Anemia";
       }
 
-      mysqli_query($con, "insert into tbl_history(
-        nama_user,
-        umur,
-        jenis_kelamin,
-        domisili,
-        tanggal_diagnosa,
-        hasil_diagnosa,
-        nilai_cf
-      ) 
-      values(
-      '$nama',
-      '$umur',
-      '$jenis',
-      '$domisili',
-      '$tanggalDiagnosa',
-      '$namaPenyakit[1]',
-      '$valueCFPenyakit[1]'
-      )");
+      mysqli_query($con, "insert into tbl_history(nama_user,umur,jenis_kelamin,domisili,tanggal_diagnosa,hasil_diagnosa,nilai_cf) 
+      values('$nama','$umur','$jenis','$domisili','$tanggalDiagnosa','$namaPenyakit[1]','$valueCFPenyakit[1]')");
         // echo '<script type = "text/javascript">';
         // echo 'window.location.href = "HasilDiagnosa.php"';
         // echo '</script>';
@@ -202,6 +223,36 @@ if(isset($_POST['submit'])){
       }
 }
 ?>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+    function alignModal(){
+        var modalDialog = $(this).find(".modal-dialog");
+        
+        // Applying the top margin on modal to align it vertically center
+        modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+    }
+    // Align modal when it is displayed
+    $(".modal").on("shown.bs.modal", alignModal);
+    
+    // Align modal when user resize the window
+    $(window).on("resize", function(){
+        $(".modal:visible").each(alignModal);
+    });   
+    });
+
+    $(window).on('load', function() {
+      $('#exampleModal').modal('show');
+    });
+    $('#closemodal').click(function() {
+      $('#exampleModal').modal('hide');
+    });
+
+    $('#exitmodal').click(function() {
+      $('#exampleModal').modal('hide');
+    });
+</script>
 </body>
 </html>
 

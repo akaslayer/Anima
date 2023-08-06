@@ -80,7 +80,6 @@ body{
 }
 
 .searchAndRule{
-    background-color: white;
     margin-bottom: 30px;
 }
 
@@ -95,7 +94,6 @@ table{
     border-radius: 20px;
     padding-top: 30px;
     padding-bottom: 50px;
-    background-color: white;
 }
 
 .search_rule input{
